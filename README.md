@@ -1,7 +1,6 @@
 # Exam Solution Generator
 
-An automated pipeline that uses Claude Code headlessly to solve exam questions and generate step-by-step solution PDFs.
-
+No solutions are posted for ESC194 past exams - this makes it hard to check your answers. To fix that: this is an automated pipeline that uses Claude Code headlessly to solve exam questions and generate step-by-step solution PDFs.
 ## How It Works
 
 1. **Solve**: Runs 12 parallel Claude CLI calls to solve each question
