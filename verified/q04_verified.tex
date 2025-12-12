@@ -1,0 +1,134 @@
+VERIFIED
+
+The solution is mathematically correct. Let me confirm the key points:
+
+**Part (a):** The epsilon-delta proof for $\lim_{x \to -2} x^2 = 4$ is correct.
+- The factorization $|x^2 - 4| = |x-2||x+2|$ is correct
+- The bound $|x-2| < 5$ when $|x+2| < 1$ is correctly derived
+- The choice $\delta = \min\{1, \varepsilon/5\}$ works perfectly
+- All algebraic steps in the formal proof are valid
+
+**Part (b):** The student correctly identified that the two-sided limit as stated does not exist, which demonstrates strong mathematical understanding. The analysis shows:
+- As $x \to -1^+$: $\frac{-1}{x+1} \to -\infty$ ✓
+- As $x \to -1^-$: $\frac{-1}{x+1} \to +\infty$ ✓
+
+The student then provided a rigorous proof for the one-sided limit $\lim_{x \to -1^+} \frac{-1}{x+1} = -\infty$, which is correct:
+- The choice $\delta = \frac{1}{|M|}$ is appropriate
+- The reciprocal inequality manipulation is handled correctly
+- The final conclusion $\frac{-1}{x+1} < M$ follows properly
+
+The student's note about the problem statement is appropriate and shows mathematical maturity.
+
+```latex
+\question{Epsilon-Delta Proofs}
+
+\part 
+\textbf{Prove:} $\displaystyle\lim_{x \to -2} x^2 = 4$
+
+\textbf{Preliminary Analysis (Scratch Work):}
+
+We need to show that for every $\varepsilon > 0$, there exists $\delta > 0$ such that
+\[
+0 < |x - (-2)| < \delta \implies |x^2 - 4| < \varepsilon
+\]
+
+Working with the expression we need to bound:
+\[
+|x^2 - 4| = |x - 2||x + 2|
+\]
+
+We need to bound $|x - 2|$ when $x$ is close to $-2$. If we assume $|x + 2| < 1$ (i.e., $-3 < x < -1$), then:
+\[
+|x - 2| = |x + 2 - 4| \leq |x + 2| + 4 < 1 + 4 = 5
+\]
+
+So if $|x + 2| < 1$, then $|x^2 - 4| = |x-2||x+2| < 5|x+2|$.
+
+To make $5|x+2| < \varepsilon$, we need $|x + 2| < \varepsilon/5$.
+
+\textbf{Formal Proof:}
+
+Let $\varepsilon > 0$ be given. Choose $\delta = \min\left\{1, \dfrac{\varepsilon}{5}\right\}$.
+
+Suppose $0 < |x + 2| < \delta$. We must show $|x^2 - 4| < \varepsilon$.
+
+Since $|x + 2| < \delta \leq 1$, we have $-3 < x < -1$, which gives us:
+\[
+-5 < x - 2 < -3 \implies |x - 2| < 5
+\]
+
+Therefore:
+\begin{align*}
+|x^2 - 4| &= |x - 2||x + 2| \\
+&< 5 \cdot |x + 2| \\
+&< 5 \cdot \delta \\
+&\leq 5 \cdot \frac{\varepsilon}{5} \\
+&= \varepsilon
+\end{align*}
+
+\[
+\boxed{\text{Therefore, } \lim_{x \to -2} x^2 = 4 \text{ by the } \varepsilon\text{-}\delta \text{ definition of a limit.}}
+\]
+
+\part 
+\textbf{Prove:} $\displaystyle\lim_{x \to -1} \frac{-1}{x+1} = -\infty$
+
+\textbf{Definition:} We say $\displaystyle\lim_{x \to a} f(x) = -\infty$ if for every $M < 0$, there exists $\delta > 0$ such that
+\[
+0 < |x - a| < \delta \implies f(x) < M
+\]
+
+\textbf{Preliminary Analysis (Scratch Work):}
+
+We need: for every $M < 0$, find $\delta > 0$ such that
+\[
+0 < |x + 1| < \delta \implies \frac{-1}{x+1} < M
+\]
+
+Consider two cases based on the sign of $x + 1$:
+
+\textbf{Case 1:} If $x + 1 > 0$ (i.e., $x > -1$), then $\dfrac{-1}{x+1} < 0 < M$ is false for $M < 0$... wait, we need $\dfrac{-1}{x+1} < M$ where $M < 0$. When $x + 1 > 0$, we have $\dfrac{-1}{x+1} < 0$, and we need this to be less than $M < 0$, meaning very negative.
+
+When $x + 1 > 0$ and small: $\dfrac{-1}{x+1}$ is large and negative. If $0 < x + 1 < \dfrac{-1}{M} = \dfrac{1}{|M|}$, then $\dfrac{-1}{x+1} < M$.
+
+\textbf{Case 2:} If $x + 1 < 0$ (i.e., $x < -1$), then $\dfrac{-1}{x+1} > 0 > M$, so the condition $\dfrac{-1}{x+1} < M$ is never satisfied.
+
+So we only get $-\infty$ behavior from the right side. Let me reconsider...
+
+Actually, for a two-sided limit to $-\infty$, we need the function to go to $-\infty$ from both sides. Let's check:
+- As $x \to -1^+$: $x + 1 \to 0^+$, so $\dfrac{-1}{x+1} \to -\infty$ \checkmark
+- As $x \to -1^-$: $x + 1 \to 0^-$, so $\dfrac{-1}{x+1} \to +\infty$ \ding{55}
+
+The two-sided limit does not exist! However, if the problem intends the one-sided limit:
+
+\textbf{Formal Proof for:} $\displaystyle\lim_{x \to -1^+} \frac{-1}{x+1} = -\infty$
+
+Let $M < 0$ be given. Choose $\delta = \dfrac{1}{|M|} = \dfrac{-1}{M}$ (which is positive since $M < 0$).
+
+Suppose $0 < x - (-1) < \delta$ and $x > -1$ (approaching from the right).
+
+Then $0 < x + 1 < \delta = \dfrac{-1}{M}$.
+
+Since $x + 1 > 0$:
+\[
+\frac{-1}{x+1} < \frac{-1}{\delta} = \frac{-1}{\frac{-1}{M}} = M
+\]
+
+Wait, let me be more careful. We have $0 < x + 1 < \dfrac{-1}{M}$.
+
+Since $x + 1 > 0$, taking reciprocals reverses the inequality:
+\[
+\frac{1}{x+1} > \frac{1}{\frac{-1}{M}} = -M = |M|
+\]
+
+Therefore:
+\[
+\frac{-1}{x+1} < -|M| = M
+\]
+
+\[
+\boxed{\text{Therefore, } \lim_{x \to -1^+} \frac{-1}{x+1} = -\infty}
+\]
+
+\textbf{Note:} The two-sided limit $\displaystyle\lim_{x \to -1} \frac{-1}{x+1}$ does not exist because the left-hand limit is $+\infty$ while the right-hand limit is $-\infty$. If the problem intended the right-hand limit, the proof above is complete. If it intended $\displaystyle\lim_{x \to -1} \frac{1}{x+1} = -\infty$, that would require $\lim_{x \to -1^-}$, which can be proven similarly with $\delta = \dfrac{1}{|M|}$ for $x < -1$.
+```

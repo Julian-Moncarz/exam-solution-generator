@@ -1,0 +1,174 @@
+```latex
+\section*{Question 8: Inequalities and Limits involving $\ln(x)$}
+
+\subsection*{Part (a): Proving the inequalities}
+
+We need to prove that for $x > 0$, $x \neq 1$:
+\[
+1 - \frac{1}{x} < \ln(x) < x - 1
+\]
+
+\textbf{Right inequality: $\ln(x) < x - 1$}
+
+Consider the function $f(x) = x - 1 - \ln(x)$ for $x > 0$.
+
+We want to show that $f(x) > 0$ for all $x > 0$, $x \neq 1$.
+
+First, compute the derivative:
+\[
+f'(x) = 1 - \frac{1}{x} = \frac{x - 1}{x}
+\]
+
+Analyzing the sign of $f'(x)$:
+\begin{itemize}
+    \item For $0 < x < 1$: $f'(x) < 0$ (function is decreasing)
+    \item For $x > 1$: $f'(x) > 0$ (function is increasing)
+\end{itemize}
+
+Since $f'(x) < 0$ for $x < 1$ and $f'(x) > 0$ for $x > 1$, the function $f$ has a global minimum at $x = 1$.
+
+Evaluating at the critical point:
+\[
+f(1) = 1 - 1 - \ln(1) = 0 - 0 = 0
+\]
+
+Since $f(x)$ has a minimum value of $0$ at $x = 1$, we have $f(x) \geq 0$ for all $x > 0$, with equality only when $x = 1$.
+
+Therefore, for $x > 0$, $x \neq 1$:
+\[
+f(x) > 0 \implies x - 1 - \ln(x) > 0 \implies \boxed{\ln(x) < x - 1}
+\]
+
+\textbf{Left inequality: $1 - \frac{1}{x} < \ln(x)$}
+
+Consider the function $g(x) = \ln(x) - 1 + \frac{1}{x}$ for $x > 0$.
+
+We want to show that $g(x) > 0$ for all $x > 0$, $x \neq 1$.
+
+Compute the derivative:
+\[
+g'(x) = \frac{1}{x} - \frac{1}{x^2} = \frac{x - 1}{x^2}
+\]
+
+Analyzing the sign of $g'(x)$:
+\begin{itemize}
+    \item For $0 < x < 1$: $g'(x) < 0$ (function is decreasing)
+    \item For $x > 1$: $g'(x) > 0$ (function is increasing)
+\end{itemize}
+
+Again, $g$ has a global minimum at $x = 1$.
+
+Evaluating at the critical point:
+\[
+g(1) = \ln(1) - 1 + \frac{1}{1} = 0 - 1 + 1 = 0
+\]
+
+Since $g(x)$ has a minimum value of $0$ at $x = 1$, we have $g(x) \geq 0$ for all $x > 0$, with equality only when $x = 1$.
+
+Therefore, for $x > 0$, $x \neq 1$:
+\[
+g(x) > 0 \implies \ln(x) - 1 + \frac{1}{x} > 0 \implies \boxed{1 - \frac{1}{x} < \ln(x)}
+\]
+
+\textbf{What happens when $x = 1$?}
+
+When $x = 1$:
+\[
+1 - \frac{1}{1} = 0, \quad \ln(1) = 0, \quad 1 - 1 = 0
+\]
+
+All three expressions equal $0$, so the inequalities become equalities:
+\[
+\boxed{1 - \frac{1}{x} = \ln(x) = x - 1 = 0 \text{ when } x = 1}
+\]
+
+\subsection*{Part (b): Proving $\displaystyle\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1$}
+
+\subsubsection*{Method (i): Using the definition of the derivative}
+
+Recall that the derivative of a function $h(t)$ at $t = a$ is defined as:
+\[
+h'(a) = \lim_{t \to a} \frac{h(t) - h(a)}{t - a}
+\]
+
+Let $h(t) = \ln(t)$. Then $h'(t) = \frac{1}{t}$, so $h'(1) = 1$.
+
+Using the definition of the derivative at $t = 1$:
+\[
+h'(1) = \lim_{t \to 1} \frac{\ln(t) - \ln(1)}{t - 1} = \lim_{t \to 1} \frac{\ln(t)}{t - 1} = 1
+\]
+
+Now substitute $t = 1 + x$. As $t \to 1$, we have $x \to 0$:
+\[
+\lim_{t \to 1} \frac{\ln(t)}{t - 1} = \lim_{x \to 0} \frac{\ln(1 + x)}{(1 + x) - 1} = \lim_{x \to 0} \frac{\ln(1 + x)}{x}
+\]
+
+Therefore:
+\[
+\boxed{\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1}
+\]
+
+\subsubsection*{Method (ii): Using part (a) and the Squeeze Theorem}
+
+From part (a), for $t > 0$, $t \neq 1$:
+\[
+1 - \frac{1}{t} < \ln(t) < t - 1
+\]
+
+Substitute $t = 1 + x$ (valid when $1 + x > 0$, i.e., $x > -1$, and $x \neq 0$):
+\[
+1 - \frac{1}{1+x} < \ln(1+x) < (1+x) - 1
+\]
+
+Simplify each part:
+\[
+\frac{(1+x) - 1}{1+x} < \ln(1+x) < x
+\]
+\[
+\frac{x}{1+x} < \ln(1+x) < x
+\]
+
+\textbf{Case 1: $x > 0$}
+
+Divide all parts by $x > 0$ (inequality directions preserved):
+\[
+\frac{1}{1+x} < \frac{\ln(1+x)}{x} < 1
+\]
+
+As $x \to 0^+$:
+\[
+\lim_{x \to 0^+} \frac{1}{1+x} = 1 \quad \text{and} \quad \lim_{x \to 0^+} 1 = 1
+\]
+
+By the Squeeze Theorem:
+\[
+\lim_{x \to 0^+} \frac{\ln(1+x)}{x} = 1
+\]
+
+\textbf{Case 2: $-1 < x < 0$}
+
+Divide all parts by $x < 0$ (inequality directions reverse):
+\[
+\frac{1}{1+x} > \frac{\ln(1+x)}{x} > 1
+\]
+
+This can be rewritten as:
+\[
+1 < \frac{\ln(1+x)}{x} < \frac{1}{1+x}
+\]
+
+As $x \to 0^-$:
+\[
+\lim_{x \to 0^-} 1 = 1 \quad \text{and} \quad \lim_{x \to 0^-} \frac{1}{1+x} = 1
+\]
+
+By the Squeeze Theorem:
+\[
+\lim_{x \to 0^-} \frac{\ln(1+x)}{x} = 1
+\]
+
+Since both one-sided limits equal $1$:
+\[
+\boxed{\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1}
+\]
+```

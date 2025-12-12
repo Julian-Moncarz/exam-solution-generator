@@ -1,0 +1,9 @@
+Question 7: L'Hopital's Rule
+
+Use L'Hopital's rule to evaluate the following limits:
+
+(a) lim_{x->0} (6^x - 3^x) / x
+
+(b) lim_{x->infinity} (x^2 - ln(2/x)) / (3x^2 + 2x)
+
+(c) lim_{x->infinity} (x - sqrt(x^2 - 3x))

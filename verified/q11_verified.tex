@@ -1,0 +1,90 @@
+VERIFIED
+
+```latex
+\section*{Question 11: Optimization}
+
+\textbf{Problem:} Find the shortest distance from a given point $(0, b)$ on the $y$-axis to the parabola $x^2 = 4y$. (The number $b$ may have any real value.)
+
+\subsection*{Solution}
+
+\textbf{Setup:} A point on the parabola $x^2 = 4y$ can be written as $(x, \frac{x^2}{4})$. We want to minimize the distance from $(0, b)$ to this point.
+
+The distance squared is:
+\[
+D(x) = (x - 0)^2 + \left(\frac{x^2}{4} - b\right)^2 = x^2 + \left(\frac{x^2}{4} - b\right)^2
+\]
+
+\textbf{Note:} Minimizing $D(x)$ is equivalent to minimizing the distance (since $\sqrt{x}$ is monotonically increasing).
+
+\subsection*{Finding Critical Points}
+
+Taking the derivative:
+\[
+D'(x) = 2x + 2\left(\frac{x^2}{4} - b\right) \cdot \frac{2x}{4} = 2x + 2\left(\frac{x^2}{4} - b\right) \cdot \frac{x}{2}
+\]
+\[
+D'(x) = 2x + x\left(\frac{x^2}{4} - b\right) = 2x + \frac{x^3}{4} - bx
+\]
+\[
+D'(x) = x\left(2 + \frac{x^2}{4} - b\right) = x\left(\frac{x^2}{4} + 2 - b\right)
+\]
+
+Setting $D'(x) = 0$:
+\begin{enumerate}
+    \item $x = 0$, or
+    \item $\frac{x^2}{4} + 2 - b = 0 \implies x^2 = 4(b - 2)$
+\end{enumerate}
+
+The second equation has real solutions only when $b \geq 2$, giving $x = \pm 2\sqrt{b-2}$.
+
+\subsection*{Case 1: $b < 2$}
+
+The only critical point is $x = 0$. We verify this is a minimum:
+\[
+D''(x) = 2 + \frac{3x^2}{4} - b = 2 - b + \frac{3x^2}{4}
+\]
+At $x = 0$: $D''(0) = 2 - b > 0$ when $b < 2$. \checkmark
+
+The minimum distance squared is:
+\[
+D(0) = 0 + \left(0 - b\right)^2 = b^2
+\]
+\[
+\text{Minimum distance} = |b|
+\]
+
+\subsection*{Case 2: $b = 2$}
+
+At $b = 2$, we have $x = 0$ as a triple root (the two solutions coalesce).
+\[
+D(0) = 0 + (0 - 2)^2 = 4
+\]
+\[
+\text{Minimum distance} = 2
+\]
+
+\subsection*{Case 3: $b > 2$}
+
+We have three critical points: $x = 0$ and $x = \pm 2\sqrt{b-2}$.
+
+At $x = 0$: $D''(0) = 2 - b < 0$, so this is a local maximum.
+
+At $x = \pm 2\sqrt{b-2}$: By symmetry, both give the same distance. Let $x^2 = 4(b-2)$.
+\[
+D = x^2 + \left(\frac{x^2}{4} - b\right)^2 = 4(b-2) + \left(b - 2 - b\right)^2 = 4(b-2) + 4
+\]
+\[
+D = 4b - 8 + 4 = 4b - 4 = 4(b-1)
+\]
+\[
+\text{Minimum distance} = 2\sqrt{b-1}
+\]
+
+\subsection*{Final Answer}
+
+\[
+\boxed{\text{Shortest distance} = \begin{cases} |b| & \text{if } b \leq 2 \\ 2\sqrt{b-1} & \text{if } b > 2 \end{cases}}
+\]
+
+\textbf{Note:} When $b = 2$, both formulas give $2$, confirming continuity of our answer.
+```

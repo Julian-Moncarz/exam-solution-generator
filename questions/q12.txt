@@ -1,0 +1,12 @@
+Question 12: Trigonometric Sums and Riemann Sums
+
+(a) Use the addition formulas:
+    cos(a + b) = cos(a)cos(b) - sin(a)sin(b)
+    cos(a - b) = cos(a)cos(b) + sin(a)sin(b)
+
+To show that: cos((j + 1/2)t) - cos((j - 1/2)t) = -2*sin(t/2)*sin(jt)
+
+And hence deduce that if t/(2*pi) is not an integer, then:
+    sum_{j=1}^{n} sin(jt) = (cos(t/2) - cos((n + 1/2)t)) / (2*sin(t/2))
+
+(b) Use the result in part (a) to evaluate integral from 0 to b of sin(x) dx, where 0 < b < pi/2, as the limit of a Riemann sum.

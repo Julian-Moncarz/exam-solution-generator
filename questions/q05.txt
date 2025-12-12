@@ -1,0 +1,13 @@
+Question 5: Curve Sketching
+
+For the function f(x) = 1/x^2 - 1/(x-2)^2:
+
+(i) Determine the domain of f, the x and y intercepts, and identify any symmetry.
+
+(ii) Find the intervals in which f increases or decreases.
+
+(iii) Find the extreme values.
+
+(iv) Determine the concavity of the graph.
+
+(v) Sketch the graph specifying the points of inflection, asymptotes and vertical tangents, if any.

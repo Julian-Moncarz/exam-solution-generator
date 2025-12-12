@@ -1,0 +1,86 @@
+```latex
+\section*{Question 7: L'Hôpital's Rule}
+
+\subsection*{Part (a)}
+Evaluate $\displaystyle\lim_{x \to 0} \frac{6^x - 3^x}{x}$.
+
+\textbf{Solution:}
+
+First, we check the form of the limit:
+\begin{itemize}
+    \item As $x \to 0$: numerator $\to 6^0 - 3^0 = 1 - 1 = 0$
+    \item As $x \to 0$: denominator $\to 0$
+\end{itemize}
+
+This is an indeterminate form $\frac{0}{0}$, so L'Hôpital's Rule applies.
+
+Differentiating numerator and denominator:
+\begin{align*}
+    \frac{d}{dx}(6^x - 3^x) &= 6^x \ln 6 - 3^x \ln 3 \\
+    \frac{d}{dx}(x) &= 1
+\end{align*}
+
+Applying L'Hôpital's Rule:
+\begin{align*}
+    \lim_{x \to 0} \frac{6^x - 3^x}{x} &= \lim_{x \to 0} \frac{6^x \ln 6 - 3^x \ln 3}{1} \\
+    &= 6^0 \ln 6 - 3^0 \ln 3 \\
+    &= \ln 6 - \ln 3 \\
+    &= \ln\left(\frac{6}{3}\right)
+\end{align*}
+
+\[\boxed{\ln 2}\]
+
+\subsection*{Part (b)}
+Evaluate $\displaystyle\lim_{x \to \infty} \frac{x^2 - \ln(2/x)}{3x^2 + 2x}$.
+
+\textbf{Solution:}
+
+First, simplify the logarithm:
+\[\ln\left(\frac{2}{x}\right) = \ln 2 - \ln x\]
+
+So the limit becomes:
+\[\lim_{x \to \infty} \frac{x^2 - \ln 2 + \ln x}{3x^2 + 2x}\]
+
+As $x \to \infty$: both numerator and denominator approach $\infty$, giving the form $\frac{\infty}{\infty}$.
+
+However, we can solve this more efficiently by dividing numerator and denominator by $x^2$:
+\begin{align*}
+    \lim_{x \to \infty} \frac{x^2 - \ln 2 + \ln x}{3x^2 + 2x} &= \lim_{x \to \infty} \frac{1 - \frac{\ln 2}{x^2} + \frac{\ln x}{x^2}}{3 + \frac{2}{x}}
+\end{align*}
+
+As $x \to \infty$:
+\begin{itemize}
+    \item $\frac{\ln 2}{x^2} \to 0$
+    \item $\frac{\ln x}{x^2} \to 0$ (since $\ln x$ grows much slower than $x^2$)
+    \item $\frac{2}{x} \to 0$
+\end{itemize}
+
+Therefore:
+\[\lim_{x \to \infty} \frac{1 - 0 + 0}{3 + 0} = \frac{1}{3}\]
+
+\[\boxed{\frac{1}{3}}\]
+
+\subsection*{Part (c)}
+Evaluate $\displaystyle\lim_{x \to \infty} \left(x - \sqrt{x^2 - 3x}\right)$.
+
+\textbf{Solution:}
+
+This is an indeterminate form $\infty - \infty$. We rationalize by multiplying by the conjugate:
+\begin{align*}
+    x - \sqrt{x^2 - 3x} &= \frac{(x - \sqrt{x^2 - 3x})(x + \sqrt{x^2 - 3x})}{x + \sqrt{x^2 - 3x}} \\
+    &= \frac{x^2 - (x^2 - 3x)}{x + \sqrt{x^2 - 3x}} \\
+    &= \frac{3x}{x + \sqrt{x^2 - 3x}}
+\end{align*}
+
+Now divide numerator and denominator by $x$ (noting $x > 0$ as $x \to \infty$):
+\begin{align*}
+    \frac{3x}{x + \sqrt{x^2 - 3x}} &= \frac{3}{1 + \frac{\sqrt{x^2 - 3x}}{x}} \\
+    &= \frac{3}{1 + \sqrt{\frac{x^2 - 3x}{x^2}}} \\
+    &= \frac{3}{1 + \sqrt{1 - \frac{3}{x}}}
+\end{align*}
+
+As $x \to \infty$, $\frac{3}{x} \to 0$, so:
+\[\lim_{x \to \infty} \frac{3}{1 + \sqrt{1 - \frac{3}{x}}} = \frac{3}{1 + \sqrt{1}} = \frac{3}{1 + 1} = \frac{3}{2}\]
+
+\[\boxed{\frac{3}{2}}\]
+```

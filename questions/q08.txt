@@ -1,0 +1,10 @@
+Question 8: Inequalities and Limits involving ln(x)
+
+(a) Given the functions f(x) = x - 1 - ln(x) and g(x) = ln(x) - 1 + 1/x, prove that the inequalities:
+    1 - 1/x < ln(x) < x - 1
+are valid for x > 0, x != 1. What happens if x = 1?
+Hint: Consider the signs of f' and g'.
+
+(b) Prove that lim_{x->0} ln(1+x)/x = 1 two ways:
+    (i) using the definition of the derivative of ln(x)
+    (ii) using part (a)

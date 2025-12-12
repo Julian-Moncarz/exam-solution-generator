@@ -1,0 +1,90 @@
+```latex
+\section*{Question 10: Second-Order Linear ODE}
+
+Find the general solution of the differential equation:
+\[
+y'' - 2y' + y = e^{2x}
+\]
+
+\subsection*{Solution}
+
+This is a second-order linear ODE with constant coefficients. We solve it by finding the homogeneous solution $y_h$ and a particular solution $y_p$.
+
+\subsubsection*{Step 1: Solve the Homogeneous Equation}
+
+Consider the homogeneous equation:
+\[
+y'' - 2y' + y = 0
+\]
+
+The characteristic equation is:
+\[
+r^2 - 2r + 1 = 0
+\]
+
+Factoring:
+\[
+(r - 1)^2 = 0
+\]
+
+This gives a repeated root $r = 1$ with multiplicity 2.
+
+For a repeated root, the homogeneous solution is:
+\[
+y_h = C_1 e^x + C_2 x e^x
+\]
+
+\subsubsection*{Step 2: Find a Particular Solution}
+
+Since the right-hand side is $e^{2x}$ and $r = 2$ is \textit{not} a root of the characteristic equation, we try a particular solution of the form:
+\[
+y_p = A e^{2x}
+\]
+
+Compute the derivatives:
+\[
+y_p' = 2A e^{2x}
+\]
+\[
+y_p'' = 4A e^{2x}
+\]
+
+Substitute into the differential equation:
+\[
+y_p'' - 2y_p' + y_p = 4A e^{2x} - 2(2A e^{2x}) + A e^{2x}
+\]
+\[
+= 4A e^{2x} - 4A e^{2x} + A e^{2x}
+\]
+\[
+= A e^{2x}
+\]
+
+Setting this equal to $e^{2x}$:
+\[
+A e^{2x} = e^{2x}
+\]
+
+Therefore:
+\[
+A = 1
+\]
+
+The particular solution is:
+\[
+y_p = e^{2x}
+\]
+
+\subsubsection*{Step 3: Write the General Solution}
+
+The general solution is:
+\[
+y = y_h + y_p
+\]
+
+\[
+\boxed{y = C_1 e^x + C_2 x e^x + e^{2x}}
+\]
+
+where $C_1$ and $C_2$ are arbitrary constants.
+```

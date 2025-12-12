@@ -1,0 +1,13 @@
+Question 3: Evaluate Limits and Derivatives
+
+Find the value of each of the following, if it exists. If you believe it doesn't exist, give your reasons.
+
+(a) lim_{x->2+} 3/(x-2)
+
+(b) lim_{x->0} |x|/x
+
+(c) d/dx [f(x)/sqrt(x)] evaluated at x=4, given that f(4) = 16 and f'(4) = 2
+
+(d) dy/dx evaluated at x=0, when y = (e^(4x) * cos^2(x)) / (2+x)^4
+
+(e) dy/dx evaluated at x=1, y=1, for x = [f(3x + 4y)]^2 and f'(7) = 1/4

@@ -1,0 +1,90 @@
+VERIFIED
+
+```latex
+\section*{Question 9: First-Order Linear ODE with Integrating Factor}
+
+\textbf{Problem:} Evaluate the integrating factor, and use it to solve the differential equation:
+\[
+xy' - y = 2x\ln(x), \quad y(1) = 2
+\]
+
+\subsection*{Solution}
+
+\textbf{Step 1: Rewrite in standard form.}
+
+First, we divide through by $x$ (assuming $x \neq 0$) to put the equation in standard linear form $y' + P(x)y = Q(x)$:
+\[
+y' - \frac{1}{x}y = 2\ln(x)
+\]
+
+Here, $P(x) = -\frac{1}{x}$ and $Q(x) = 2\ln(x)$.
+
+\textbf{Step 2: Find the integrating factor.}
+
+The integrating factor is given by:
+\[
+\mu(x) = e^{\int P(x)\,dx} = e^{\int -\frac{1}{x}\,dx} = e^{-\ln|x|}
+\]
+
+For $x > 0$ (which is required since we have $\ln(x)$ in the original equation):
+\[
+\mu(x) = e^{-\ln x} = \frac{1}{x}
+\]
+
+\textbf{Step 3: Multiply through by the integrating factor.}
+
+Multiplying the standard form equation by $\mu(x) = \frac{1}{x}$:
+\[
+\frac{1}{x}y' - \frac{1}{x^2}y = \frac{2\ln(x)}{x}
+\]
+
+The left side is the derivative of $\frac{y}{x}$ (we can verify: $\frac{d}{dx}\left(\frac{y}{x}\right) = \frac{y'}{x} - \frac{y}{x^2}$):
+\[
+\frac{d}{dx}\left(\frac{y}{x}\right) = \frac{2\ln(x)}{x}
+\]
+
+\textbf{Step 4: Integrate both sides.}
+
+\[
+\frac{y}{x} = \int \frac{2\ln(x)}{x}\,dx
+\]
+
+For the right side, use substitution $u = \ln(x)$, so $du = \frac{1}{x}dx$:
+\[
+\int \frac{2\ln(x)}{x}\,dx = 2\int u\,du = 2 \cdot \frac{u^2}{2} + C = u^2 + C = (\ln x)^2 + C
+\]
+
+Therefore:
+\[
+\frac{y}{x} = (\ln x)^2 + C
+\]
+
+\textbf{Step 5: Solve for $y$.}
+
+\[
+y = x(\ln x)^2 + Cx
+\]
+
+\textbf{Step 6: Apply the initial condition.}
+
+Using $y(1) = 2$:
+\[
+2 = 1 \cdot (\ln 1)^2 + C \cdot 1 = 1 \cdot 0 + C = C
+\]
+
+Thus $C = 2$.
+
+\textbf{Step 7: Write the final solution.}
+
+\[
+\boxed{y = x(\ln x)^2 + 2x}
+\]
+
+\textbf{Verification:} We can verify by substituting back into the original equation:
+\begin{itemize}
+    \item $y = x(\ln x)^2 + 2x$
+    \item $y' = (\ln x)^2 + x \cdot 2\ln x \cdot \frac{1}{x} + 2 = (\ln x)^2 + 2\ln x + 2$
+    \item $xy' - y = x[(\ln x)^2 + 2\ln x + 2] - [x(\ln x)^2 + 2x]$
+    \item $= x(\ln x)^2 + 2x\ln x + 2x - x(\ln x)^2 - 2x = 2x\ln x$ \checkmark
+\end{itemize}
+```

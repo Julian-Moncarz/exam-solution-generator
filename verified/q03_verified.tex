@@ -1,0 +1,151 @@
+VERIFIED
+
+```latex
+\section*{Question 3: Evaluate Limits and Derivatives}
+
+\textit{Find the value of each of the following, if it exists. If you believe it doesn't exist, give your reasons.}
+
+\subsection*{Part (a)}
+\[
+\lim_{x \to 2^+} \frac{3}{x-2}
+\]
+
+\textbf{Solution:}
+
+As $x \to 2^+$, we have $x > 2$, so $x - 2 > 0$ (positive and approaching 0).
+
+Therefore:
+\[
+\lim_{x \to 2^+} \frac{3}{x-2} = \frac{3}{0^+} = +\infty
+\]
+
+\[
+\boxed{+\infty}
+\]
+
+\subsection*{Part (b)}
+\[
+\lim_{x \to 0} \frac{|x|}{x}
+\]
+
+\textbf{Solution:}
+
+We must examine the one-sided limits since $|x|$ behaves differently for positive and negative $x$.
+
+\textbf{Right-hand limit:} For $x > 0$, $|x| = x$, so:
+\[
+\lim_{x \to 0^+} \frac{|x|}{x} = \lim_{x \to 0^+} \frac{x}{x} = 1
+\]
+
+\textbf{Left-hand limit:} For $x < 0$, $|x| = -x$, so:
+\[
+\lim_{x \to 0^-} \frac{|x|}{x} = \lim_{x \to 0^-} \frac{-x}{x} = -1
+\]
+
+Since $\lim_{x \to 0^+} \frac{|x|}{x} = 1 \neq -1 = \lim_{x \to 0^-} \frac{|x|}{x}$, the limit does not exist.
+
+\[
+\boxed{\text{Does not exist (left and right limits differ)}}
+\]
+
+\subsection*{Part (c)}
+\[
+\frac{d}{dx}\left[\frac{f(x)}{\sqrt{x}}\right] \bigg|_{x=4}, \quad \text{given } f(4) = 16 \text{ and } f'(4) = 2
+\]
+
+\textbf{Solution:}
+
+Using the quotient rule with $u = f(x)$ and $v = \sqrt{x} = x^{1/2}$:
+\[
+\frac{d}{dx}\left[\frac{f(x)}{\sqrt{x}}\right] = \frac{f'(x) \cdot \sqrt{x} - f(x) \cdot \frac{1}{2\sqrt{x}}}{x}
+\]
+
+Simplifying:
+\[
+= \frac{f'(x)\sqrt{x}}{x} - \frac{f(x)}{2x\sqrt{x}} = \frac{f'(x)}{\sqrt{x}} - \frac{f(x)}{2x^{3/2}}
+\]
+
+Evaluating at $x = 4$:
+\[
+= \frac{f'(4)}{\sqrt{4}} - \frac{f(4)}{2(4)^{3/2}} = \frac{2}{2} - \frac{16}{2 \cdot 8} = 1 - \frac{16}{16} = 1 - 1 = 0
+\]
+
+\[
+\boxed{0}
+\]
+
+\subsection*{Part (d)}
+\[
+\frac{dy}{dx}\bigg|_{x=0}, \quad \text{where } y = \frac{e^{4x} \cos^2(x)}{(2+x)^4}
+\]
+
+\textbf{Solution:}
+
+We use logarithmic differentiation. Taking the natural log of both sides:
+\[
+\ln y = 4x + 2\ln(\cos x) - 4\ln(2+x)
+\]
+
+Differentiating both sides with respect to $x$:
+\[
+\frac{1}{y}\frac{dy}{dx} = 4 + 2 \cdot \frac{-\sin x}{\cos x} - \frac{4}{2+x} = 4 - 2\tan x - \frac{4}{2+x}
+\]
+
+Therefore:
+\[
+\frac{dy}{dx} = y\left(4 - 2\tan x - \frac{4}{2+x}\right)
+\]
+
+At $x = 0$:
+\[
+y(0) = \frac{e^0 \cdot \cos^2(0)}{(2+0)^4} = \frac{1 \cdot 1}{16} = \frac{1}{16}
+\]
+
+\[
+\frac{dy}{dx}\bigg|_{x=0} = \frac{1}{16}\left(4 - 2(0) - \frac{4}{2}\right) = \frac{1}{16}(4 - 0 - 2) = \frac{2}{16} = \frac{1}{8}
+\]
+
+\[
+\boxed{\frac{1}{8}}
+\]
+
+\subsection*{Part (e)}
+\[
+\frac{dy}{dx}\bigg|_{x=1, y=1}, \quad \text{where } x = [f(3x + 4y)]^2 \text{ and } f'(7) = \frac{1}{4}
+\]
+
+\textbf{Solution:}
+
+We have the implicit equation $x = [f(3x + 4y)]^2$.
+
+Differentiating both sides with respect to $x$ using the chain rule:
+\[
+1 = 2f(3x + 4y) \cdot f'(3x + 4y) \cdot \left(3 + 4\frac{dy}{dx}\right)
+\]
+
+At the point $(x, y) = (1, 1)$:
+\begin{itemize}
+    \item $3x + 4y = 3(1) + 4(1) = 7$
+    \item From $x = [f(3x+4y)]^2$: $1 = [f(7)]^2$, so $f(7) = \pm 1$
+    \item Given $f'(7) = \frac{1}{4}$
+\end{itemize}
+
+Substituting into our differentiated equation:
+\[
+1 = 2f(7) \cdot \frac{1}{4} \cdot \left(3 + 4\frac{dy}{dx}\right) = \frac{f(7)}{2}\left(3 + 4\frac{dy}{dx}\right)
+\]
+
+\textbf{Case 1:} If $f(7) = 1$:
+\[
+1 = \frac{1}{2}\left(3 + 4\frac{dy}{dx}\right) \implies 2 = 3 + 4\frac{dy}{dx} \implies \frac{dy}{dx} = -\frac{1}{4}
+\]
+
+\textbf{Case 2:} If $f(7) = -1$:
+\[
+1 = -\frac{1}{2}\left(3 + 4\frac{dy}{dx}\right) \implies -2 = 3 + 4\frac{dy}{dx} \implies \frac{dy}{dx} = -\frac{5}{4}
+\]
+
+\[
+\boxed{\frac{dy}{dx} = -\frac{1}{4} \text{ if } f(7) = 1, \quad \text{or} \quad \frac{dy}{dx} = -\frac{5}{4} \text{ if } f(7) = -1}
+\]
+```

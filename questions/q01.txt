@@ -1,0 +1,23 @@
+Question 1: True/False (10 statements)
+
+Determine whether the following statements are true or false.
+
+(a) If f is an even function, then f' is an even function.
+
+(b) If f(x) > 1 for all x and lim_{x->0} f(x) exists, then lim_{x->0} f(x) > 1.
+
+(c) integral from 2 to 16 of (1/x) dx = 3 ln 2
+
+(d) lim_{x->4} (2x/(x-4) - 8/(x-4)) = lim_{x->4} (2x/(x-4)) - lim_{x->4} (8/(x-4))
+
+(e) If f'(r) exists, then lim_{x->r} f(x) = f(r).
+
+(f) If f is continuous at a, so is |f|.
+
+(g) There exists a function f such that f(x) > 0, f'(x) < 0, and f''(x) > 0 for all x.
+
+(h) integral from -5 to 5 of (ax^2 + bx + c) dx = 2 * integral from 0 to 5 of (ax^2 + c) dx
+
+(i) All continuous functions have antiderivatives.
+
+(j) If the line x = 1 is a vertical asymptote of y = f(x), then f is not defined at x = 1.

@@ -1,0 +1,130 @@
+VERIFIED
+
+```latex
+\section*{Question 12: Trigonometric Sums and Riemann Sums}
+
+\subsection*{Part (a): Trigonometric Identity and Sum Formula}
+
+\textbf{Step 1: Derive the product-to-sum identity.}
+
+Starting with the addition formulas:
+\begin{align}
+\cos(a + b) &= \cos a \cos b - \sin a \sin b \\
+\cos(a - b) &= \cos a \cos b + \sin a \sin b
+\end{align}
+
+Subtracting equation (1) from equation (2):
+\begin{align}
+\cos(a - b) - \cos(a + b) &= 2\sin a \sin b
+\end{align}
+
+Therefore:
+\begin{equation}
+\cos(a + b) - \cos(a - b) = -2\sin a \sin b
+\end{equation}
+
+\textbf{Step 2: Apply to the specific case.}
+
+Let $a = jt$ and $b = \frac{t}{2}$. Then:
+\begin{align}
+a + b &= jt + \frac{t}{2} = \left(j + \frac{1}{2}\right)t \\
+a - b &= jt - \frac{t}{2} = \left(j - \frac{1}{2}\right)t
+\end{align}
+
+Substituting into equation (4):
+\[
+\boxed{\cos\left(\left(j + \frac{1}{2}\right)t\right) - \cos\left(\left(j - \frac{1}{2}\right)t\right) = -2\sin\left(\frac{t}{2}\right)\sin(jt)}
+\]
+
+\textbf{Step 3: Derive the sum formula using telescoping.}
+
+Rearranging the identity:
+\[
+\sin(jt) = \frac{\cos\left(\left(j - \frac{1}{2}\right)t\right) - \cos\left(\left(j + \frac{1}{2}\right)t\right)}{2\sin\left(\frac{t}{2}\right)}
+\]
+
+This is valid when $\sin\left(\frac{t}{2}\right) \neq 0$, i.e., when $\frac{t}{2\pi}$ is not an integer.
+
+Summing from $j = 1$ to $n$:
+\[
+\sum_{j=1}^{n} \sin(jt) = \frac{1}{2\sin\left(\frac{t}{2}\right)} \sum_{j=1}^{n} \left[\cos\left(\left(j - \frac{1}{2}\right)t\right) - \cos\left(\left(j + \frac{1}{2}\right)t\right)\right]
+\]
+
+The sum telescopes:
+\begin{align*}
+&\sum_{j=1}^{n} \left[\cos\left(\left(j - \frac{1}{2}\right)t\right) - \cos\left(\left(j + \frac{1}{2}\right)t\right)\right] \\
+&= \left[\cos\left(\frac{t}{2}\right) - \cos\left(\frac{3t}{2}\right)\right] + \left[\cos\left(\frac{3t}{2}\right) - \cos\left(\frac{5t}{2}\right)\right] + \cdots + \left[\cos\left(\left(n - \frac{1}{2}\right)t\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)\right] \\
+&= \cos\left(\frac{t}{2}\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)
+\end{align*}
+
+Therefore:
+\[
+\boxed{\sum_{j=1}^{n} \sin(jt) = \frac{\cos\left(\frac{t}{2}\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)}{2\sin\left(\frac{t}{2}\right)}}
+\]
+
+\subsection*{Part (b): Evaluating the Integral via Riemann Sum}
+
+\textbf{Step 1: Set up the Riemann sum.}
+
+To evaluate $\displaystyle\int_0^b \sin x \, dx$ where $0 < b < \frac{\pi}{2}$, partition $[0, b]$ into $n$ equal subintervals.
+
+Let $\Delta x = \frac{b}{n}$ and use right endpoints $x_j = j \cdot \frac{b}{n}$ for $j = 1, 2, \ldots, n$.
+
+The Riemann sum is:
+\[
+R_n = \sum_{j=1}^{n} \sin(x_j) \cdot \Delta x = \sum_{j=1}^{n} \sin\left(\frac{jb}{n}\right) \cdot \frac{b}{n} = \frac{b}{n} \sum_{j=1}^{n} \sin\left(\frac{jb}{n}\right)
+\]
+
+\textbf{Step 2: Apply the sum formula from part (a).}
+
+Let $t = \frac{b}{n}$. Since $0 < b < \frac{\pi}{2}$ and $n \geq 1$, we have $0 < t < \frac{\pi}{2}$, so $\frac{t}{2\pi}$ is not an integer.
+
+By part (a):
+\[
+\sum_{j=1}^{n} \sin(jt) = \frac{\cos\left(\frac{t}{2}\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)}{2\sin\left(\frac{t}{2}\right)}
+\]
+
+With $t = \frac{b}{n}$:
+\[
+\sum_{j=1}^{n} \sin\left(\frac{jb}{n}\right) = \frac{\cos\left(\frac{b}{2n}\right) - \cos\left(\frac{(2n+1)b}{2n}\right)}{2\sin\left(\frac{b}{2n}\right)}
+\]
+
+Therefore:
+\[
+R_n = \frac{b}{n} \cdot \frac{\cos\left(\frac{b}{2n}\right) - \cos\left(b + \frac{b}{2n}\right)}{2\sin\left(\frac{b}{2n}\right)}
+\]
+
+\textbf{Step 3: Evaluate the limit as $n \to \infty$.}
+
+Rewrite as:
+\[
+R_n = \frac{b}{2n\sin\left(\frac{b}{2n}\right)} \cdot \left[\cos\left(\frac{b}{2n}\right) - \cos\left(b + \frac{b}{2n}\right)\right]
+\]
+
+Let $u = \frac{b}{2n}$, so as $n \to \infty$, $u \to 0^+$.
+
+\textbf{First factor:} Using $\lim_{u \to 0} \frac{\sin u}{u} = 1$:
+\[
+\lim_{n \to \infty} \frac{b}{2n\sin\left(\frac{b}{2n}\right)} = \lim_{u \to 0^+} \frac{u}{\sin u} = 1
+\]
+
+\textbf{Second factor:} As $n \to \infty$:
+\[
+\lim_{n \to \infty} \left[\cos\left(\frac{b}{2n}\right) - \cos\left(b + \frac{b}{2n}\right)\right] = \cos(0) - \cos(b) = 1 - \cos b
+\]
+
+\textbf{Step 4: Combine the limits.}
+
+\[
+\int_0^b \sin x \, dx = \lim_{n \to \infty} R_n = 1 \cdot (1 - \cos b) = 1 - \cos b
+\]
+
+\textbf{Verification:} By the Fundamental Theorem of Calculus:
+\[
+\int_0^b \sin x \, dx = [-\cos x]_0^b = -\cos b - (-\cos 0) = 1 - \cos b \quad \checkmark
+\]
+
+\[
+\boxed{\int_0^b \sin x \, dx = 1 - \cos b}
+\]
+```

@@ -1,0 +1,11 @@
+Question 6: Volumes of Revolution
+
+Consider the region defined by the curves y = x^2 and y = 2 - x^2. Provide a sketch of the region and find (but do NOT solve) integrals representing the following:
+
+(a) The volume of rotation about the x-axis using the washer method.
+
+(b) The volume of rotation about the x-axis using the shell method.
+
+(c) The volume of rotation about the line x = 1 using the washer method.
+
+(d) The volume of rotation about the line x = 1 using the shell method.

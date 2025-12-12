@@ -1,0 +1,4 @@
+Question 10: Second-Order Linear ODE
+
+Find the general solution of the differential equation:
+    y'' - 2y' + y = e^(2x)

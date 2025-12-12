@@ -1,0 +1,4 @@
+Question 9: First-Order Linear ODE with Integrating Factor
+
+Evaluate the integrating factor, and use it to solve the differential equation:
+    x*y' - y = 2x*ln(x),    y(1) = 2

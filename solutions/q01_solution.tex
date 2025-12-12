@@ -1,0 +1,151 @@
+```latex
+\section*{Question 1: True/False}
+
+\textbf{(a) If $f$ is an even function, then $f'$ is an even function.}
+
+\textbf{FALSE.}
+
+If $f$ is even, then $f(-x) = f(x)$ for all $x$. Differentiating both sides with respect to $x$ using the chain rule:
+\[
+-f'(-x) = f'(x)
+\]
+This means $f'(-x) = -f'(x)$, so $f'$ is an \textit{odd} function, not an even function.
+
+\boxed{\text{FALSE}}
+
+\bigskip
+
+\textbf{(b) If $f(x) > 1$ for all $x$ and $\displaystyle\lim_{x \to 0} f(x)$ exists, then $\displaystyle\lim_{x \to 0} f(x) > 1$.}
+
+\textbf{FALSE.}
+
+While $f(x) > 1$ for all $x$, the limit can equal exactly 1. For example, consider $f(x) = 1 + x^2$ for $x \neq 0$. Then $f(x) > 1$ for all $x \neq 0$, but $\lim_{x \to 0} f(x) = 1$, which is not greater than 1.
+
+The correct conclusion is $\lim_{x \to 0} f(x) \geq 1$ (by the comparison theorem for limits), but strict inequality is not guaranteed.
+
+\boxed{\text{FALSE}}
+
+\bigskip
+
+\textbf{(c) $\displaystyle\int_2^{16} \frac{1}{x}\, dx = 3\ln 2$}
+
+\textbf{TRUE.}
+
+\[
+\int_2^{16} \frac{1}{x}\, dx = \ln|x| \Big|_2^{16} = \ln 16 - \ln 2 = \ln\left(\frac{16}{2}\right) = \ln 8 = \ln 2^3 = 3\ln 2
+\]
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(d) $\displaystyle\lim_{x \to 4} \left(\frac{2x}{x-4} - \frac{8}{x-4}\right) = \lim_{x \to 4} \frac{2x}{x-4} - \lim_{x \to 4} \frac{8}{x-4}$}
+
+\textbf{FALSE.}
+
+The limit law $\lim(f - g) = \lim f - \lim g$ only applies when both individual limits exist. Here, $\lim_{x \to 4} \frac{2x}{x-4}$ and $\lim_{x \to 4} \frac{8}{x-4}$ do not exist (both are infinite).
+
+However, the combined limit on the left side does exist:
+\[
+\lim_{x \to 4} \left(\frac{2x}{x-4} - \frac{8}{x-4}\right) = \lim_{x \to 4} \frac{2x - 8}{x-4} = \lim_{x \to 4} \frac{2(x-4)}{x-4} = \lim_{x \to 4} 2 = 2
+\]
+
+The right side is an indeterminate form $\infty - \infty$ and is not well-defined.
+
+\boxed{\text{FALSE}}
+
+\bigskip
+
+\textbf{(e) If $f'(r)$ exists, then $\displaystyle\lim_{x \to r} f(x) = f(r)$.}
+
+\textbf{TRUE.}
+
+If $f'(r)$ exists, then $f$ must be differentiable at $r$. Differentiability at a point implies continuity at that point. Continuity at $r$ means exactly that $\lim_{x \to r} f(x) = f(r)$.
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(f) If $f$ is continuous at $a$, so is $|f|$.}
+
+\textbf{TRUE.}
+
+If $f$ is continuous at $a$, then $\lim_{x \to a} f(x) = f(a)$. Since the absolute value function is continuous everywhere, the composition $|f(x)|$ is continuous at $a$:
+\[
+\lim_{x \to a} |f(x)| = \left|\lim_{x \to a} f(x)\right| = |f(a)|
+\]
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(g) There exists a function $f$ such that $f(x) > 0$, $f'(x) < 0$, and $f''(x) > 0$ for all $x$.}
+
+\textbf{TRUE.}
+
+Consider $f(x) = e^{-x}$. Then:
+\begin{itemize}
+    \item $f(x) = e^{-x} > 0$ for all $x$ \checkmark
+    \item $f'(x) = -e^{-x} < 0$ for all $x$ \checkmark
+    \item $f''(x) = e^{-x} > 0$ for all $x$ \checkmark
+\end{itemize}
+
+This represents a positive, decreasing, concave up function.
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(h) $\displaystyle\int_{-5}^{5} (ax^2 + bx + c)\, dx = 2\int_0^{5} (ax^2 + c)\, dx$}
+
+\textbf{TRUE.}
+
+We can split the integral:
+\[
+\int_{-5}^{5} (ax^2 + bx + c)\, dx = \int_{-5}^{5} ax^2\, dx + \int_{-5}^{5} bx\, dx + \int_{-5}^{5} c\, dx
+\]
+
+\begin{itemize}
+    \item $ax^2$ is even, so $\int_{-5}^{5} ax^2\, dx = 2\int_0^{5} ax^2\, dx$
+    \item $bx$ is odd, so $\int_{-5}^{5} bx\, dx = 0$
+    \item $c$ is even (constant), so $\int_{-5}^{5} c\, dx = 2\int_0^{5} c\, dx$
+\end{itemize}
+
+Therefore:
+\[
+\int_{-5}^{5} (ax^2 + bx + c)\, dx = 2\int_0^{5} ax^2\, dx + 0 + 2\int_0^{5} c\, dx = 2\int_0^{5} (ax^2 + c)\, dx
+\]
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(i) All continuous functions have antiderivatives.}
+
+\textbf{TRUE.}
+
+This is a consequence of the First Fundamental Theorem of Calculus. If $f$ is continuous on an interval $[a, b]$, then the function
+\[
+F(x) = \int_a^x f(t)\, dt
+\]
+is an antiderivative of $f$ on that interval (i.e., $F'(x) = f(x)$).
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(j) If the line $x = 1$ is a vertical asymptote of $y = f(x)$, then $f$ is not defined at $x = 1$.}
+
+\textbf{FALSE.}
+
+A vertical asymptote at $x = 1$ only requires that $\lim_{x \to 1^+} f(x) = \pm\infty$ or $\lim_{x \to 1^-} f(x) = \pm\infty$ (or both). The function can still be defined at $x = 1$.
+
+For example, consider:
+\[
+f(x) = \begin{cases} \frac{1}{(x-1)^2} & x \neq 1 \\ 0 & x = 1 \end{cases}
+\]
+
+This function has a vertical asymptote at $x = 1$, yet $f(1) = 0$ is defined.
+
+\boxed{\text{FALSE}}
+```

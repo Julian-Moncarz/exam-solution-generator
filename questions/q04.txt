@@ -1,0 +1,5 @@
+Question 4: Epsilon-Delta Proofs
+
+(a) Provide a delta-epsilon proof that lim_{x->-2} x^2 = 4.
+
+(b) Provide a rigorous proof (i.e. similar to a delta-epsilon proof) that lim_{x->-1} -1/(x+1) = -infinity.

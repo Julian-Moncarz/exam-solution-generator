@@ -1,0 +1,15 @@
+Question 2: Derivatives and Antiderivatives
+
+Give the derivatives and antiderivatives of each of the following, where c > 0 is a constant:
+
+(a) c^(2x)
+
+(b) x^(2c)
+
+(c) sin(cx)
+
+(d) x * ln(cx^2)
+
+(e) e^(cx)
+
+Hint: you may find it useful to prove, then use, the fact that an antiderivative of ln(x) is x*ln(x) - x.

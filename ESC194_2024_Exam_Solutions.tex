@@ -1,0 +1,1441 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{pifont}
+\usepackage{tikz}
+
+% Define missing commands that might appear in solutions
+\newcommand{\question}[1]{\subsection*{#1}}
+\renewcommand{\part}{\paragraph{}}
+\newcommand{\subpart}{\subparagraph{}}
+\newcommand{\xmark}{\ding{55}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{ESC194 Calculus I - Final Exam Solutions}
+\lhead{December 2024}
+\rfoot{Page \thepage}
+
+\title{\textbf{ESC194F Calculus I}\\Final Exam Solutions\\December 2024}
+\author{University of Toronto\\Faculty of Applied Science and Engineering}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\vspace{1cm}
+\noindent\textbf{Examiners:} P.C. Stangeby and J.W. Davis\\
+\textbf{Note:} Each question is worth 10 marks.
+
+\newpage
+
+\section*{Question 1}
+
+\section*{Question 1: True/False}
+
+\textbf{(a) If $f$ is an even function, then $f'$ is an even function.}
+
+\textbf{FALSE.}
+
+If $f$ is even, then $f(-x) = f(x)$ for all $x$. Differentiating both sides with respect to $x$ using the chain rule:
+\[
+-f'(-x) = f'(x)
+\]
+This means $f'(-x) = -f'(x)$, so $f'$ is an \textit{odd} function, not an even function.
+
+\boxed{\text{FALSE}}
+
+\bigskip
+
+\textbf{(b) If $f(x) > 1$ for all $x$ and $\displaystyle\lim_{x \to 0} f(x)$ exists, then $\displaystyle\lim_{x \to 0} f(x) > 1$.}
+
+\textbf{FALSE.}
+
+While $f(x) > 1$ for all $x$, the limit can equal exactly 1. For example, consider $f(x) = 1 + x^2$ for $x \neq 0$. Then $f(x) > 1$ for all $x \neq 0$, but $\lim_{x \to 0} f(x) = 1$, which is not greater than 1.
+
+The correct conclusion is $\lim_{x \to 0} f(x) \geq 1$ (by the comparison theorem for limits), but strict inequality is not guaranteed.
+
+\boxed{\text{FALSE}}
+
+\bigskip
+
+\textbf{(c) $\displaystyle\int_2^{16} \frac{1}{x}\, dx = 3\ln 2$}
+
+\textbf{TRUE.}
+
+\[
+\int_2^{16} \frac{1}{x}\, dx = \ln|x| \Big|_2^{16} = \ln 16 - \ln 2 = \ln\left(\frac{16}{2}\right) = \ln 8 = \ln 2^3 = 3\ln 2
+\]
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(d) $\displaystyle\lim_{x \to 4} \left(\frac{2x}{x-4} - \frac{8}{x-4}\right) = \lim_{x \to 4} \frac{2x}{x-4} - \lim_{x \to 4} \frac{8}{x-4}$}
+
+\textbf{FALSE.}
+
+The limit law $\lim(f - g) = \lim f - \lim g$ only applies when both individual limits exist. Here, $\lim_{x \to 4} \frac{2x}{x-4}$ and $\lim_{x \to 4} \frac{8}{x-4}$ do not exist (both are infinite).
+
+However, the combined limit on the left side does exist:
+\[
+\lim_{x \to 4} \left(\frac{2x}{x-4} - \frac{8}{x-4}\right) = \lim_{x \to 4} \frac{2x - 8}{x-4} = \lim_{x \to 4} \frac{2(x-4)}{x-4} = \lim_{x \to 4} 2 = 2
+\]
+
+The right side is an indeterminate form $\infty - \infty$ and is not well-defined.
+
+\boxed{\text{FALSE}}
+
+\bigskip
+
+\textbf{(e) If $f'(r)$ exists, then $\displaystyle\lim_{x \to r} f(x) = f(r)$.}
+
+\textbf{TRUE.}
+
+If $f'(r)$ exists, then $f$ must be differentiable at $r$. Differentiability at a point implies continuity at that point. Continuity at $r$ means exactly that $\lim_{x \to r} f(x) = f(r)$.
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(f) If $f$ is continuous at $a$, so is $|f|$.}
+
+\textbf{TRUE.}
+
+If $f$ is continuous at $a$, then $\lim_{x \to a} f(x) = f(a)$. Since the absolute value function is continuous everywhere, the composition $|f(x)|$ is continuous at $a$:
+\[
+\lim_{x \to a} |f(x)| = \left|\lim_{x \to a} f(x)\right| = |f(a)|
+\]
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(g) There exists a function $f$ such that $f(x) > 0$, $f'(x) < 0$, and $f''(x) > 0$ for all $x$.}
+
+\textbf{TRUE.}
+
+Consider $f(x) = e^{-x}$. Then:
+\begin{itemize}
+    \item $f(x) = e^{-x} > 0$ for all $x$ \checkmark
+    \item $f'(x) = -e^{-x} < 0$ for all $x$ \checkmark
+    \item $f''(x) = e^{-x} > 0$ for all $x$ \checkmark
+\end{itemize}
+
+This represents a positive, decreasing, concave up function.
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(h) $\displaystyle\int_{-5}^{5} (ax^2 + bx + c)\, dx = 2\int_0^{5} (ax^2 + c)\, dx$}
+
+\textbf{TRUE.}
+
+We can split the integral:
+\[
+\int_{-5}^{5} (ax^2 + bx + c)\, dx = \int_{-5}^{5} ax^2\, dx + \int_{-5}^{5} bx\, dx + \int_{-5}^{5} c\, dx
+\]
+
+\begin{itemize}
+    \item $ax^2$ is even, so $\int_{-5}^{5} ax^2\, dx = 2\int_0^{5} ax^2\, dx$
+    \item $bx$ is odd, so $\int_{-5}^{5} bx\, dx = 0$
+    \item $c$ is even (constant), so $\int_{-5}^{5} c\, dx = 2\int_0^{5} c\, dx$
+\end{itemize}
+
+Therefore:
+\[
+\int_{-5}^{5} (ax^2 + bx + c)\, dx = 2\int_0^{5} ax^2\, dx + 0 + 2\int_0^{5} c\, dx = 2\int_0^{5} (ax^2 + c)\, dx
+\]
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(i) All continuous functions have antiderivatives.}
+
+\textbf{TRUE.}
+
+This is a consequence of the First Fundamental Theorem of Calculus. If $f$ is continuous on an interval $[a, b]$, then the function
+\[
+F(x) = \int_a^x f(t)\, dt
+\]
+is an antiderivative of $f$ on that interval (i.e., $F'(x) = f(x)$).
+
+\boxed{\text{TRUE}}
+
+\bigskip
+
+\textbf{(j) If the line $x = 1$ is a vertical asymptote of $y = f(x)$, then $f$ is not defined at $x = 1$.}
+
+\textbf{FALSE.}
+
+A vertical asymptote at $x = 1$ only requires that $\lim_{x \to 1^+} f(x) = \pm\infty$ or $\lim_{x \to 1^-} f(x) = \pm\infty$ (or both). The function can still be defined at $x = 1$.
+
+For example, consider:
+\[
+f(x) = \begin{cases} \frac{1}{(x-1)^2} & x \neq 1 \\ 0 & x = 1 \end{cases}
+\]
+
+This function has a vertical asymptote at $x = 1$, yet $f(1) = 0$ is defined.
+
+\boxed{\text{FALSE}}
+
+\newpage
+
+\section*{Question 2}
+
+\section*{Question 2: Derivatives and Antiderivatives}
+
+Give the derivatives and antiderivatives of each of the following, where $c > 0$ is a constant.
+
+\textbf{Useful Lemma:} First, let us prove that an antiderivative of $\ln(x)$ is $x\ln(x) - x$.
+
+\textit{Proof:} We verify by differentiation:
+\[\frac{d}{dx}\left(x\ln(x) - x\right) = \ln(x) + x \cdot \frac{1}{x} - 1 = \ln(x) + 1 - 1 = \ln(x) \quad \checkmark\]
+
+\bigskip
+
+\subsection*{(a) $c^{2x}$}
+
+\textbf{Derivative:} Rewrite using exponential form: $c^{2x} = e^{2x\ln(c)}$
+
+Using the chain rule:
+\[\frac{d}{dx}\left(c^{2x}\right) = e^{2x\ln(c)} \cdot 2\ln(c) = \boxed{2\ln(c) \cdot c^{2x}}\]
+
+\textbf{Antiderivative:} 
+\[\int c^{2x}\,dx = \int e^{2x\ln(c)}\,dx = \frac{e^{2x\ln(c)}}{2\ln(c)} + C = \boxed{\frac{c^{2x}}{2\ln(c)} + C}\]
+
+\bigskip
+
+\subsection*{(b) $x^{2c}$}
+
+\textbf{Derivative:} Using the power rule (since $2c$ is a constant):
+\[\frac{d}{dx}\left(x^{2c}\right) = \boxed{2c \cdot x^{2c-1}}\]
+
+\textbf{Antiderivative:} Using the power rule for integration:
+\[\int x^{2c}\,dx = \frac{x^{2c+1}}{2c+1} + C = \boxed{\frac{x^{2c+1}}{2c+1} + C}\]
+
+\bigskip
+
+\subsection*{(c) $\sin(cx)$}
+
+\textbf{Derivative:} Using the chain rule:
+\[\frac{d}{dx}\left(\sin(cx)\right) = \cos(cx) \cdot c = \boxed{c\cos(cx)}\]
+
+\textbf{Antiderivative:} 
+\[\int \sin(cx)\,dx = -\frac{1}{c}\cos(cx) + C = \boxed{-\frac{\cos(cx)}{c} + C}\]
+
+\bigskip
+
+\subsection*{(d) $x\ln(cx^2)$}
+
+\textbf{Derivative:} First simplify: $x\ln(cx^2) = x\ln(c) + 2x\ln(x)$
+
+Using the product rule on $2x\ln(x)$:
+\[\frac{d}{dx}\left(x\ln(c) + 2x\ln(x)\right) = \ln(c) + 2\left(\ln(x) + x \cdot \frac{1}{x}\right) = \ln(c) + 2\ln(x) + 2\]
+
+This can also be written as:
+\[\boxed{\ln(c) + 2\ln(x) + 2 = \ln(cx^2) + 2}\]
+
+\textbf{Antiderivative:} Using the simplified form $x\ln(c) + 2x\ln(x)$:
+\[\int \left(x\ln(c) + 2x\ln(x)\right)dx = \ln(c) \cdot \frac{x^2}{2} + 2\int x\ln(x)\,dx\]
+
+For $\int x\ln(x)\,dx$, use integration by parts with $u = \ln(x)$, $dv = x\,dx$:
+\[\int x\ln(x)\,dx = \frac{x^2}{2}\ln(x) - \int \frac{x^2}{2} \cdot \frac{1}{x}\,dx = \frac{x^2}{2}\ln(x) - \frac{x^2}{4}\]
+
+Therefore:
+\[\int x\ln(cx^2)\,dx = \frac{x^2\ln(c)}{2} + 2\left(\frac{x^2\ln(x)}{2} - \frac{x^2}{4}\right) = \frac{x^2\ln(c)}{2} + x^2\ln(x) - \frac{x^2}{2}\]
+
+\[\boxed{\frac{x^2\ln(cx^2)}{2} - \frac{x^2}{2} + C = \frac{x^2}{2}\left(\ln(cx^2) - 1\right) + C}\]
+
+\bigskip
+
+\subsection*{(e) $e^{cx}$}
+
+\textbf{Derivative:} Using the chain rule:
+\[\frac{d}{dx}\left(e^{cx}\right) = e^{cx} \cdot c = \boxed{ce^{cx}}\]
+
+\textbf{Antiderivative:} 
+\[\int e^{cx}\,dx = \boxed{\frac{e^{cx}}{c} + C}\]
+
+\newpage
+
+\section*{Question 3}
+
+\section*{Question 3: Evaluate Limits and Derivatives}
+
+\textit{Find the value of each of the following, if it exists. If you believe it doesn't exist, give your reasons.}
+
+\subsection*{Part (a)}
+\[
+\lim_{x \to 2^+} \frac{3}{x-2}
+\]
+
+\textbf{Solution:}
+
+As $x \to 2^+$, we have $x > 2$, so $x - 2 > 0$ (positive and approaching 0).
+
+Therefore:
+\[
+\lim_{x \to 2^+} \frac{3}{x-2} = \frac{3}{0^+} = +\infty
+\]
+
+\[
+\boxed{+\infty}
+\]
+
+\subsection*{Part (b)}
+\[
+\lim_{x \to 0} \frac{|x|}{x}
+\]
+
+\textbf{Solution:}
+
+We must examine the one-sided limits since $|x|$ behaves differently for positive and negative $x$.
+
+\textbf{Right-hand limit:} For $x > 0$, $|x| = x$, so:
+\[
+\lim_{x \to 0^+} \frac{|x|}{x} = \lim_{x \to 0^+} \frac{x}{x} = 1
+\]
+
+\textbf{Left-hand limit:} For $x < 0$, $|x| = -x$, so:
+\[
+\lim_{x \to 0^-} \frac{|x|}{x} = \lim_{x \to 0^-} \frac{-x}{x} = -1
+\]
+
+Since $\lim_{x \to 0^+} \frac{|x|}{x} = 1 \neq -1 = \lim_{x \to 0^-} \frac{|x|}{x}$, the limit does not exist.
+
+\[
+\boxed{\text{Does not exist (left and right limits differ)}}
+\]
+
+\subsection*{Part (c)}
+\[
+\frac{d}{dx}\left[\frac{f(x)}{\sqrt{x}}\right] \bigg|_{x=4}, \quad \text{given } f(4) = 16 \text{ and } f'(4) = 2
+\]
+
+\textbf{Solution:}
+
+Using the quotient rule with $u = f(x)$ and $v = \sqrt{x} = x^{1/2}$:
+\[
+\frac{d}{dx}\left[\frac{f(x)}{\sqrt{x}}\right] = \frac{f'(x) \cdot \sqrt{x} - f(x) \cdot \frac{1}{2\sqrt{x}}}{x}
+\]
+
+Simplifying:
+\[
+= \frac{f'(x)\sqrt{x}}{x} - \frac{f(x)}{2x\sqrt{x}} = \frac{f'(x)}{\sqrt{x}} - \frac{f(x)}{2x^{3/2}}
+\]
+
+Evaluating at $x = 4$:
+\[
+= \frac{f'(4)}{\sqrt{4}} - \frac{f(4)}{2(4)^{3/2}} = \frac{2}{2} - \frac{16}{2 \cdot 8} = 1 - \frac{16}{16} = 1 - 1 = 0
+\]
+
+\[
+\boxed{0}
+\]
+
+\subsection*{Part (d)}
+\[
+\frac{dy}{dx}\bigg|_{x=0}, \quad \text{where } y = \frac{e^{4x} \cos^2(x)}{(2+x)^4}
+\]
+
+\textbf{Solution:}
+
+We use logarithmic differentiation. Taking the natural log of both sides:
+\[
+\ln y = 4x + 2\ln(\cos x) - 4\ln(2+x)
+\]
+
+Differentiating both sides with respect to $x$:
+\[
+\frac{1}{y}\frac{dy}{dx} = 4 + 2 \cdot \frac{-\sin x}{\cos x} - \frac{4}{2+x} = 4 - 2\tan x - \frac{4}{2+x}
+\]
+
+Therefore:
+\[
+\frac{dy}{dx} = y\left(4 - 2\tan x - \frac{4}{2+x}\right)
+\]
+
+At $x = 0$:
+\[
+y(0) = \frac{e^0 \cdot \cos^2(0)}{(2+0)^4} = \frac{1 \cdot 1}{16} = \frac{1}{16}
+\]
+
+\[
+\frac{dy}{dx}\bigg|_{x=0} = \frac{1}{16}\left(4 - 2(0) - \frac{4}{2}\right) = \frac{1}{16}(4 - 0 - 2) = \frac{2}{16} = \frac{1}{8}
+\]
+
+\[
+\boxed{\frac{1}{8}}
+\]
+
+\subsection*{Part (e)}
+\[
+\frac{dy}{dx}\bigg|_{x=1, y=1}, \quad \text{where } x = [f(3x + 4y)]^2 \text{ and } f'(7) = \frac{1}{4}
+\]
+
+\textbf{Solution:}
+
+We have the implicit equation $x = [f(3x + 4y)]^2$.
+
+Differentiating both sides with respect to $x$ using the chain rule:
+\[
+1 = 2f(3x + 4y) \cdot f'(3x + 4y) \cdot \left(3 + 4\frac{dy}{dx}\right)
+\]
+
+At the point $(x, y) = (1, 1)$:
+\begin{itemize}
+    \item $3x + 4y = 3(1) + 4(1) = 7$
+    \item From $x = [f(3x+4y)]^2$: $1 = [f(7)]^2$, so $f(7) = \pm 1$
+    \item Given $f'(7) = \frac{1}{4}$
+\end{itemize}
+
+Substituting into our differentiated equation:
+\[
+1 = 2f(7) \cdot \frac{1}{4} \cdot \left(3 + 4\frac{dy}{dx}\right) = \frac{f(7)}{2}\left(3 + 4\frac{dy}{dx}\right)
+\]
+
+\textbf{Case 1:} If $f(7) = 1$:
+\[
+1 = \frac{1}{2}\left(3 + 4\frac{dy}{dx}\right) \implies 2 = 3 + 4\frac{dy}{dx} \implies \frac{dy}{dx} = -\frac{1}{4}
+\]
+
+\textbf{Case 2:} If $f(7) = -1$:
+\[
+1 = -\frac{1}{2}\left(3 + 4\frac{dy}{dx}\right) \implies -2 = 3 + 4\frac{dy}{dx} \implies \frac{dy}{dx} = -\frac{5}{4}
+\]
+
+\[
+\boxed{\frac{dy}{dx} = -\frac{1}{4} \text{ if } f(7) = 1, \quad \text{or} \quad \frac{dy}{dx} = -\frac{5}{4} \text{ if } f(7) = -1}
+\]
+
+\newpage
+
+\section*{Question 4}
+
+\question{Epsilon-Delta Proofs}
+
+\part 
+\textbf{Prove:} $\displaystyle\lim_{x \to -2} x^2 = 4$
+
+\textbf{Preliminary Analysis (Scratch Work):}
+
+We need to show that for every $\varepsilon > 0$, there exists $\delta > 0$ such that
+\[
+0 < |x - (-2)| < \delta \implies |x^2 - 4| < \varepsilon
+\]
+
+Working with the expression we need to bound:
+\[
+|x^2 - 4| = |x - 2||x + 2|
+\]
+
+We need to bound $|x - 2|$ when $x$ is close to $-2$. If we assume $|x + 2| < 1$ (i.e., $-3 < x < -1$), then:
+\[
+|x - 2| = |x + 2 - 4| \leq |x + 2| + 4 < 1 + 4 = 5
+\]
+
+So if $|x + 2| < 1$, then $|x^2 - 4| = |x-2||x+2| < 5|x+2|$.
+
+To make $5|x+2| < \varepsilon$, we need $|x + 2| < \varepsilon/5$.
+
+\textbf{Formal Proof:}
+
+Let $\varepsilon > 0$ be given. Choose $\delta = \min\left\{1, \dfrac{\varepsilon}{5}\right\}$.
+
+Suppose $0 < |x + 2| < \delta$. We must show $|x^2 - 4| < \varepsilon$.
+
+Since $|x + 2| < \delta \leq 1$, we have $-3 < x < -1$, which gives us:
+\[
+-5 < x - 2 < -3 \implies |x - 2| < 5
+\]
+
+Therefore:
+\begin{align*}
+|x^2 - 4| &= |x - 2||x + 2| \\
+&< 5 \cdot |x + 2| \\
+&< 5 \cdot \delta \\
+&\leq 5 \cdot \frac{\varepsilon}{5} \\
+&= \varepsilon
+\end{align*}
+
+\[
+\boxed{\text{Therefore, } \lim_{x \to -2} x^2 = 4 \text{ by the } \varepsilon\text{-}\delta \text{ definition of a limit.}}
+\]
+
+\part 
+\textbf{Prove:} $\displaystyle\lim_{x \to -1} \frac{-1}{x+1} = -\infty$
+
+\textbf{Definition:} We say $\displaystyle\lim_{x \to a} f(x) = -\infty$ if for every $M < 0$, there exists $\delta > 0$ such that
+\[
+0 < |x - a| < \delta \implies f(x) < M
+\]
+
+\textbf{Preliminary Analysis (Scratch Work):}
+
+We need: for every $M < 0$, find $\delta > 0$ such that
+\[
+0 < |x + 1| < \delta \implies \frac{-1}{x+1} < M
+\]
+
+Consider two cases based on the sign of $x + 1$:
+
+\textbf{Case 1:} If $x + 1 > 0$ (i.e., $x > -1$), then $\dfrac{-1}{x+1} < 0 < M$ is false for $M < 0$... wait, we need $\dfrac{-1}{x+1} < M$ where $M < 0$. When $x + 1 > 0$, we have $\dfrac{-1}{x+1} < 0$, and we need this to be less than $M < 0$, meaning very negative.
+
+When $x + 1 > 0$ and small: $\dfrac{-1}{x+1}$ is large and negative. If $0 < x + 1 < \dfrac{-1}{M} = \dfrac{1}{|M|}$, then $\dfrac{-1}{x+1} < M$.
+
+\textbf{Case 2:} If $x + 1 < 0$ (i.e., $x < -1$), then $\dfrac{-1}{x+1} > 0 > M$, so the condition $\dfrac{-1}{x+1} < M$ is never satisfied.
+
+So we only get $-\infty$ behavior from the right side. Let me reconsider...
+
+Actually, for a two-sided limit to $-\infty$, we need the function to go to $-\infty$ from both sides. Let's check:
+- As $x \to -1^+$: $x + 1 \to 0^+$, so $\dfrac{-1}{x+1} \to -\infty$ \checkmark
+- As $x \to -1^-$: $x + 1 \to 0^-$, so $\dfrac{-1}{x+1} \to +\infty$ \ding{55}
+
+The two-sided limit does not exist! However, if the problem intends the one-sided limit:
+
+\textbf{Formal Proof for:} $\displaystyle\lim_{x \to -1^+} \frac{-1}{x+1} = -\infty$
+
+Let $M < 0$ be given. Choose $\delta = \dfrac{1}{|M|} = \dfrac{-1}{M}$ (which is positive since $M < 0$).
+
+Suppose $0 < x - (-1) < \delta$ and $x > -1$ (approaching from the right).
+
+Then $0 < x + 1 < \delta = \dfrac{-1}{M}$.
+
+Since $x + 1 > 0$:
+\[
+\frac{-1}{x+1} < \frac{-1}{\delta} = \frac{-1}{\frac{-1}{M}} = M
+\]
+
+Wait, let me be more careful. We have $0 < x + 1 < \dfrac{-1}{M}$.
+
+Since $x + 1 > 0$, taking reciprocals reverses the inequality:
+\[
+\frac{1}{x+1} > \frac{1}{\frac{-1}{M}} = -M = |M|
+\]
+
+Therefore:
+\[
+\frac{-1}{x+1} < -|M| = M
+\]
+
+\[
+\boxed{\text{Therefore, } \lim_{x \to -1^+} \frac{-1}{x+1} = -\infty}
+\]
+
+\textbf{Note:} The two-sided limit $\displaystyle\lim_{x \to -1} \frac{-1}{x+1}$ does not exist because the left-hand limit is $+\infty$ while the right-hand limit is $-\infty$. If the problem intended the right-hand limit, the proof above is complete. If it intended $\displaystyle\lim_{x \to -1} \frac{1}{x+1} = -\infty$, that would require $\lim_{x \to -1^-}$, which can be proven similarly with $\delta = \dfrac{1}{|M|}$ for $x < -1$.
+
+\newpage
+
+\section*{Question 5}
+
+\textbf{Question 5: Curve Sketching}
+
+Let $f(x) = \dfrac{1}{x^2} - \dfrac{1}{(x-2)^2}$.
+
+\textbf{(i) Domain, Intercepts, and Symmetry}
+
+\textbf{Domain:} The function is undefined when $x^2 = 0$ or $(x-2)^2 = 0$, i.e., when $x = 0$ or $x = 2$.
+
+$$\boxed{\text{Domain: } (-\infty, 0) \cup (0, 2) \cup (2, \infty)}$$
+
+\textbf{$y$-intercept:} None, since $x = 0$ is not in the domain.
+
+\textbf{$x$-intercept:} Set $f(x) = 0$:
+$$\frac{1}{x^2} = \frac{1}{(x-2)^2}$$
+$$x^2 = (x-2)^2$$
+$$x^2 = x^2 - 4x + 4$$
+$$4x = 4 \implies x = 1$$
+
+$$\boxed{x\text{-intercept: } (1, 0)}$$
+
+\textbf{Symmetry:} Check for symmetry about $x = 1$ by substituting $x = 1 + t$:
+$$f(1+t) = \frac{1}{(1+t)^2} - \frac{1}{(t-1)^2} = \frac{1}{(1+t)^2} - \frac{1}{(1-t)^2}$$
+$$f(1-t) = \frac{1}{(1-t)^2} - \frac{1}{(-1-t)^2} = \frac{1}{(1-t)^2} - \frac{1}{(1+t)^2}$$
+
+Since $f(1-t) = -f(1+t)$, the function has \textbf{point symmetry about $(1, 0)$}.
+
+\textbf{(ii) Intervals of Increase/Decrease}
+
+First, compute $f'(x)$:
+$$f'(x) = -\frac{2}{x^3} + \frac{2}{(x-2)^3} = 2\left(\frac{1}{(x-2)^3} - \frac{1}{x^3}\right)$$
+
+Set $f'(x) = 0$:
+$$\frac{1}{(x-2)^3} = \frac{1}{x^3}$$
+$$(x-2)^3 = x^3$$
+$$x - 2 = x \quad \text{(taking cube roots)}$$
+
+This gives a contradiction, so $f'(x) \neq 0$ for any $x$ in the domain.
+
+Analyzing the sign of $f'(x) = 2\left(\frac{1}{(x-2)^3} - \frac{1}{x^3}\right)$:
+
+\begin{itemize}
+    \item For $x < 0$: $(x-2)^3 < 0$ and $x^3 < 0$, so $\frac{1}{(x-2)^3} > \frac{1}{x^3}$ (since $|x-2| > |x|$). Thus $f'(x) > 0$.
+    \item For $0 < x < 1$: $(x-2)^3 < 0$ and $x^3 > 0$, so $f'(x) < 0$.
+    \item For $1 < x < 2$: $(x-2)^3 < 0$ and $x^3 > 0$, so $f'(x) < 0$.
+    \item For $x > 2$: $(x-2)^3 > 0$ and $x^3 > 0$, and $(x-2)^3 < x^3$, so $f'(x) > 0$.
+\end{itemize}
+
+$$\boxed{\text{Increasing on } (-\infty, 0) \text{ and } (2, \infty); \text{ Decreasing on } (0, 2)}$$
+
+\textbf{(iii) Extreme Values}
+
+Since $f'(x) \neq 0$ anywhere in the domain and the critical points $x = 0$ and $x = 2$ are not in the domain (they are vertical asymptotes), there are no local extrema.
+
+$$\boxed{\text{No local or absolute extreme values}}$$
+
+\textbf{(iv) Concavity}
+
+Compute $f''(x)$:
+$$f''(x) = \frac{6}{x^4} - \frac{6}{(x-2)^4} = 6\left(\frac{1}{x^4} - \frac{1}{(x-2)^4}\right)$$
+
+Set $f''(x) = 0$:
+$$\frac{1}{x^4} = \frac{1}{(x-2)^4}$$
+$$x^4 = (x-2)^4$$
+$$|x| = |x-2|$$
+$$x = 1 \quad \text{(the solution in the domain)}$$
+
+Analyzing the sign of $f''(x)$:
+\begin{itemize}
+    \item For $x < 0$: $|x| < |x-2|$, so $x^4 < (x-2)^4$, thus $f''(x) > 0$ (concave up).
+    \item For $0 < x < 1$: $|x| < |x-2|$, so $f''(x) > 0$ (concave up).
+    \item For $1 < x < 2$: $|x| > |x-2|$, so $f''(x) < 0$ (concave down).
+    \item For $x > 2$: $|x| > |x-2|$, so $f''(x) < 0$ (concave down).
+\end{itemize}
+
+$$\boxed{\text{Concave up on } (-\infty, 0) \cup (0, 1); \text{ Concave down on } (1, 2) \cup (2, \infty)}$$
+
+\textbf{(v) Graph Sketch}
+
+\textbf{Asymptotes:}
+\begin{itemize}
+    \item \textbf{Vertical asymptotes:} $x = 0$ and $x = 2$
+    \item \textbf{Horizontal asymptote:} As $x \to \pm\infty$, $f(x) \to 0$, so $y = 0$ is a horizontal asymptote.
+\end{itemize}
+
+\textbf{Behavior near asymptotes:}
+\begin{itemize}
+    \item As $x \to 0^-$: $f(x) \to +\infty$
+    \item As $x \to 0^+$: $f(x) \to +\infty$
+    \item As $x \to 2^-$: $f(x) \to -\infty$
+    \item As $x \to 2^+$: $f(x) \to -\infty$
+\end{itemize}
+
+\textbf{Inflection point:} At $x = 1$, $f(1) = 1 - 1 = 0$.
+
+$$\boxed{\text{Inflection point: } (1, 0)}$$
+
+\textbf{Key features of the graph:}
+\begin{itemize}
+    \item Vertical asymptotes at $x = 0$ and $x = 2$
+    \item Horizontal asymptote at $y = 0$
+    \item Passes through $(1, 0)$ with an inflection point
+    \item Point symmetry about $(1, 0)$
+    \item No vertical tangents (derivative is never zero or undefined except at asymptotes)
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    \draw[->] (-3,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-3) -- (0,3) node[above] {$y$};
+    
+    % Vertical asymptotes
+    \draw[dashed, red] (0,-3) -- (0,3);
+    \draw[dashed, red] (2,-3) -- (2,3);
+    
+    % Labels
+    \node[below] at (1,0) {$1$};
+    \node[below] at (2,-0.1) {$2$};
+    \fill (1,0) circle (2pt);
+    \node[above right] at (1,0) {$(1,0)$};
+    
+    % Curve sketches (approximate)
+    \draw[thick, blue, domain=-2.5:-0.3, samples=50] plot (\x, {1/(\x*\x) - 1/((\x-2)*(\x-2))});
+    \draw[thick, blue, domain=0.3:1.7, samples=50] plot (\x, {1/(\x*\x) - 1/((\x-2)*(\x-2))});
+    \draw[thick, blue, domain=2.3:4.5, samples=50] plot (\x, {1/(\x*\x) - 1/((\x-2)*(\x-2))});
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\section*{Question 6}
+
+\section*{Question 6: Volumes of Revolution}
+
+Consider the region defined by the curves $y = x^2$ and $y = 2 - x^2$.
+
+\subsection*{Sketch of the Region}
+
+First, we find the intersection points by setting $x^2 = 2 - x^2$:
+\[2x^2 = 2 \implies x^2 = 1 \implies x = \pm 1\]
+
+At $x = \pm 1$, we have $y = 1$. So the curves intersect at $(-1, 1)$ and $(1, 1)$.
+
+The region is bounded above by $y = 2 - x^2$ (downward parabola with vertex at $(0,2)$) and below by $y = x^2$ (upward parabola with vertex at origin).
+
+\begin{center}
+\textit{[Sketch shows the two parabolas intersecting at $(\pm 1, 1)$, with the enclosed ``football-shaped'' region between them]}
+\end{center}
+
+\subsection*{Part (a): Volume about the $x$-axis using the washer method}
+
+When rotating about the $x$-axis, we integrate with respect to $x$. At each $x \in [-1, 1]$:
+\begin{itemize}
+    \item Outer radius: $R(x) = 2 - x^2$ (the farther curve from the $x$-axis)
+    \item Inner radius: $r(x) = x^2$ (the closer curve to the $x$-axis)
+\end{itemize}
+
+The washer method gives:
+\[
+\boxed{V = \pi \int_{-1}^{1} \left[(2-x^2)^2 - (x^2)^2\right] dx}
+\]
+
+\subsection*{Part (b): Volume about the $x$-axis using the shell method}
+
+For the shell method about the $x$-axis, we integrate with respect to $y$. We need to express $x$ in terms of $y$:
+\begin{itemize}
+    \item From $y = x^2$: $x = \sqrt{y}$ (for $x \geq 0$)
+    \item From $y = 2 - x^2$: $x = \sqrt{2-y}$ (for $x \geq 0$)
+\end{itemize}
+
+For $y \in [0, 1]$: the right boundary is $x = \sqrt{2-y}$ and left boundary is $x = \sqrt{y}$.
+
+For $y \in [1, 2]$: both boundaries come from $y = 2-x^2$, giving $x = \pm\sqrt{2-y}$.
+
+Each shell at height $y$ has:
+\begin{itemize}
+    \item Radius: $y$
+    \item Height (horizontal extent): depends on the interval
+\end{itemize}
+
+For $y \in [0,1]$: shell height $= 2(\sqrt{2-y} - \sqrt{y})$ (by symmetry about $y$-axis)
+
+For $y \in [1,2]$: shell height $= 2\sqrt{2-y}$
+
+\[
+\boxed{V = 2\pi \int_{0}^{1} y \cdot 2(\sqrt{2-y} - \sqrt{y})\, dy + 2\pi \int_{1}^{2} y \cdot 2\sqrt{2-y}\, dy}
+\]
+
+\subsection*{Part (c): Volume about the line $x = 1$ using the washer method}
+
+For rotation about $x = 1$, we integrate with respect to $y$. By symmetry of the original region about the $y$-axis, we focus on how the curves relate to $x = 1$.
+
+For $y \in [0, 1]$:
+\begin{itemize}
+    \item From $y = x^2$: $x = \pm\sqrt{y}$
+    \item From $y = 2-x^2$: $x = \pm\sqrt{2-y}$
+    \item Outer radius (from $x=1$): $R(y) = 1 - (-\sqrt{2-y}) = 1 + \sqrt{2-y}$
+    \item Inner radius (from $x=1$): $r(y) = 1 - (-\sqrt{y}) = 1 + \sqrt{y}$
+\end{itemize}
+
+For $y \in [1, 2]$:
+\begin{itemize}
+    \item Only $y = 2-x^2$ bounds the region
+    \item Outer radius: $R(y) = 1 + \sqrt{2-y}$
+    \item Inner radius: $r(y) = 1 - \sqrt{2-y}$
+\end{itemize}
+
+\[
+\boxed{V = \pi\int_0^1 \left[(1+\sqrt{2-y})^2 - (1+\sqrt{y})^2\right] dy + \pi\int_1^2 \left[(1+\sqrt{2-y})^2 - (1-\sqrt{2-y})^2\right] dy}
+\]
+
+\subsection*{Part (d): Volume about the line $x = 1$ using the shell method}
+
+For the shell method about $x = 1$, we integrate with respect to $x$. Each vertical shell at position $x$ has:
+\begin{itemize}
+    \item Radius: $|1 - x|$
+    \item Height: $(2-x^2) - x^2 = 2 - 2x^2$
+\end{itemize}
+
+For $x \in [-1, 1]$, the distance from $x$ to the line $x = 1$ is $1 - x$ (which is positive for all $x$ in this interval).
+
+\[
+\boxed{V = 2\pi \int_{-1}^{1} (1-x)(2-2x^2)\, dx}
+\]
+
+Or equivalently:
+\[
+\boxed{V = 4\pi \int_{-1}^{1} (1-x)(1-x^2)\, dx}
+\]
+
+\newpage
+
+\section*{Question 7}
+
+\section*{Question 7: L'Hôpital's Rule}
+
+\subsection*{Part (a)}
+Evaluate $\displaystyle\lim_{x \to 0} \frac{6^x - 3^x}{x}$.
+
+\textbf{Solution:}
+
+First, we check the form of the limit:
+\begin{itemize}
+    \item As $x \to 0$: numerator $\to 6^0 - 3^0 = 1 - 1 = 0$
+    \item As $x \to 0$: denominator $\to 0$
+\end{itemize}
+
+This is an indeterminate form $\frac{0}{0}$, so L'Hôpital's Rule applies.
+
+Differentiating numerator and denominator:
+\begin{align*}
+    \frac{d}{dx}(6^x - 3^x) &= 6^x \ln 6 - 3^x \ln 3 \\
+    \frac{d}{dx}(x) &= 1
+\end{align*}
+
+Applying L'Hôpital's Rule:
+\begin{align*}
+    \lim_{x \to 0} \frac{6^x - 3^x}{x} &= \lim_{x \to 0} \frac{6^x \ln 6 - 3^x \ln 3}{1} \\
+    &= 6^0 \ln 6 - 3^0 \ln 3 \\
+    &= \ln 6 - \ln 3 \\
+    &= \ln\left(\frac{6}{3}\right)
+\end{align*}
+
+\[\boxed{\ln 2}\]
+
+\subsection*{Part (b)}
+Evaluate $\displaystyle\lim_{x \to \infty} \frac{x^2 - \ln(2/x)}{3x^2 + 2x}$.
+
+\textbf{Solution:}
+
+First, simplify the logarithm:
+\[\ln\left(\frac{2}{x}\right) = \ln 2 - \ln x\]
+
+So the limit becomes:
+\[\lim_{x \to \infty} \frac{x^2 - \ln 2 + \ln x}{3x^2 + 2x}\]
+
+As $x \to \infty$: both numerator and denominator approach $\infty$, giving the form $\frac{\infty}{\infty}$.
+
+However, we can solve this more efficiently by dividing numerator and denominator by $x^2$:
+\begin{align*}
+    \lim_{x \to \infty} \frac{x^2 - \ln 2 + \ln x}{3x^2 + 2x} &= \lim_{x \to \infty} \frac{1 - \frac{\ln 2}{x^2} + \frac{\ln x}{x^2}}{3 + \frac{2}{x}}
+\end{align*}
+
+As $x \to \infty$:
+\begin{itemize}
+    \item $\frac{\ln 2}{x^2} \to 0$
+    \item $\frac{\ln x}{x^2} \to 0$ (since $\ln x$ grows much slower than $x^2$)
+    \item $\frac{2}{x} \to 0$
+\end{itemize}
+
+Therefore:
+\[\lim_{x \to \infty} \frac{1 - 0 + 0}{3 + 0} = \frac{1}{3}\]
+
+\[\boxed{\frac{1}{3}}\]
+
+\subsection*{Part (c)}
+Evaluate $\displaystyle\lim_{x \to \infty} \left(x - \sqrt{x^2 - 3x}\right)$.
+
+\textbf{Solution:}
+
+This is an indeterminate form $\infty - \infty$. We rationalize by multiplying by the conjugate:
+\begin{align*}
+    x - \sqrt{x^2 - 3x} &= \frac{(x - \sqrt{x^2 - 3x})(x + \sqrt{x^2 - 3x})}{x + \sqrt{x^2 - 3x}} \\
+    &= \frac{x^2 - (x^2 - 3x)}{x + \sqrt{x^2 - 3x}} \\
+    &= \frac{3x}{x + \sqrt{x^2 - 3x}}
+\end{align*}
+
+Now divide numerator and denominator by $x$ (noting $x > 0$ as $x \to \infty$):
+\begin{align*}
+    \frac{3x}{x + \sqrt{x^2 - 3x}} &= \frac{3}{1 + \frac{\sqrt{x^2 - 3x}}{x}} \\
+    &= \frac{3}{1 + \sqrt{\frac{x^2 - 3x}{x^2}}} \\
+    &= \frac{3}{1 + \sqrt{1 - \frac{3}{x}}}
+\end{align*}
+
+As $x \to \infty$, $\frac{3}{x} \to 0$, so:
+\[\lim_{x \to \infty} \frac{3}{1 + \sqrt{1 - \frac{3}{x}}} = \frac{3}{1 + \sqrt{1}} = \frac{3}{1 + 1} = \frac{3}{2}\]
+
+\[\boxed{\frac{3}{2}}\]
+
+\newpage
+
+\section*{Question 8}
+
+\section*{Question 8: Inequalities and Limits involving $\ln(x)$}
+
+\subsection*{Part (a): Proving the inequalities}
+
+We need to prove that for $x > 0$, $x \neq 1$:
+\[
+1 - \frac{1}{x} < \ln(x) < x - 1
+\]
+
+\textbf{Right inequality: $\ln(x) < x - 1$}
+
+Consider the function $f(x) = x - 1 - \ln(x)$ for $x > 0$.
+
+We want to show that $f(x) > 0$ for all $x > 0$, $x \neq 1$.
+
+First, compute the derivative:
+\[
+f'(x) = 1 - \frac{1}{x} = \frac{x - 1}{x}
+\]
+
+Analyzing the sign of $f'(x)$:
+\begin{itemize}
+    \item For $0 < x < 1$: $f'(x) < 0$ (function is decreasing)
+    \item For $x > 1$: $f'(x) > 0$ (function is increasing)
+\end{itemize}
+
+Since $f'(x) < 0$ for $x < 1$ and $f'(x) > 0$ for $x > 1$, the function $f$ has a global minimum at $x = 1$.
+
+Evaluating at the critical point:
+\[
+f(1) = 1 - 1 - \ln(1) = 0 - 0 = 0
+\]
+
+Since $f(x)$ has a minimum value of $0$ at $x = 1$, we have $f(x) \geq 0$ for all $x > 0$, with equality only when $x = 1$.
+
+Therefore, for $x > 0$, $x \neq 1$:
+\[
+f(x) > 0 \implies x - 1 - \ln(x) > 0 \implies \boxed{\ln(x) < x - 1}
+\]
+
+\textbf{Left inequality: $1 - \frac{1}{x} < \ln(x)$}
+
+Consider the function $g(x) = \ln(x) - 1 + \frac{1}{x}$ for $x > 0$.
+
+We want to show that $g(x) > 0$ for all $x > 0$, $x \neq 1$.
+
+Compute the derivative:
+\[
+g'(x) = \frac{1}{x} - \frac{1}{x^2} = \frac{x - 1}{x^2}
+\]
+
+Analyzing the sign of $g'(x)$:
+\begin{itemize}
+    \item For $0 < x < 1$: $g'(x) < 0$ (function is decreasing)
+    \item For $x > 1$: $g'(x) > 0$ (function is increasing)
+\end{itemize}
+
+Again, $g$ has a global minimum at $x = 1$.
+
+Evaluating at the critical point:
+\[
+g(1) = \ln(1) - 1 + \frac{1}{1} = 0 - 1 + 1 = 0
+\]
+
+Since $g(x)$ has a minimum value of $0$ at $x = 1$, we have $g(x) \geq 0$ for all $x > 0$, with equality only when $x = 1$.
+
+Therefore, for $x > 0$, $x \neq 1$:
+\[
+g(x) > 0 \implies \ln(x) - 1 + \frac{1}{x} > 0 \implies \boxed{1 - \frac{1}{x} < \ln(x)}
+\]
+
+\textbf{What happens when $x = 1$?}
+
+When $x = 1$:
+\[
+1 - \frac{1}{1} = 0, \quad \ln(1) = 0, \quad 1 - 1 = 0
+\]
+
+All three expressions equal $0$, so the inequalities become equalities:
+\[
+\boxed{1 - \frac{1}{x} = \ln(x) = x - 1 = 0 \text{ when } x = 1}
+\]
+
+\subsection*{Part (b): Proving $\displaystyle\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1$}
+
+\subsubsection*{Method (i): Using the definition of the derivative}
+
+Recall that the derivative of a function $h(t)$ at $t = a$ is defined as:
+\[
+h'(a) = \lim_{t \to a} \frac{h(t) - h(a)}{t - a}
+\]
+
+Let $h(t) = \ln(t)$. Then $h'(t) = \frac{1}{t}$, so $h'(1) = 1$.
+
+Using the definition of the derivative at $t = 1$:
+\[
+h'(1) = \lim_{t \to 1} \frac{\ln(t) - \ln(1)}{t - 1} = \lim_{t \to 1} \frac{\ln(t)}{t - 1} = 1
+\]
+
+Now substitute $t = 1 + x$. As $t \to 1$, we have $x \to 0$:
+\[
+\lim_{t \to 1} \frac{\ln(t)}{t - 1} = \lim_{x \to 0} \frac{\ln(1 + x)}{(1 + x) - 1} = \lim_{x \to 0} \frac{\ln(1 + x)}{x}
+\]
+
+Therefore:
+\[
+\boxed{\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1}
+\]
+
+\subsubsection*{Method (ii): Using part (a) and the Squeeze Theorem}
+
+From part (a), for $t > 0$, $t \neq 1$:
+\[
+1 - \frac{1}{t} < \ln(t) < t - 1
+\]
+
+Substitute $t = 1 + x$ (valid when $1 + x > 0$, i.e., $x > -1$, and $x \neq 0$):
+\[
+1 - \frac{1}{1+x} < \ln(1+x) < (1+x) - 1
+\]
+
+Simplify each part:
+\[
+\frac{(1+x) - 1}{1+x} < \ln(1+x) < x
+\]
+\[
+\frac{x}{1+x} < \ln(1+x) < x
+\]
+
+\textbf{Case 1: $x > 0$}
+
+Divide all parts by $x > 0$ (inequality directions preserved):
+\[
+\frac{1}{1+x} < \frac{\ln(1+x)}{x} < 1
+\]
+
+As $x \to 0^+$:
+\[
+\lim_{x \to 0^+} \frac{1}{1+x} = 1 \quad \text{and} \quad \lim_{x \to 0^+} 1 = 1
+\]
+
+By the Squeeze Theorem:
+\[
+\lim_{x \to 0^+} \frac{\ln(1+x)}{x} = 1
+\]
+
+\textbf{Case 2: $-1 < x < 0$}
+
+Divide all parts by $x < 0$ (inequality directions reverse):
+\[
+\frac{1}{1+x} > \frac{\ln(1+x)}{x} > 1
+\]
+
+This can be rewritten as:
+\[
+1 < \frac{\ln(1+x)}{x} < \frac{1}{1+x}
+\]
+
+As $x \to 0^-$:
+\[
+\lim_{x \to 0^-} 1 = 1 \quad \text{and} \quad \lim_{x \to 0^-} \frac{1}{1+x} = 1
+\]
+
+By the Squeeze Theorem:
+\[
+\lim_{x \to 0^-} \frac{\ln(1+x)}{x} = 1
+\]
+
+Since both one-sided limits equal $1$:
+\[
+\boxed{\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1}
+\]
+
+\newpage
+
+\section*{Question 9}
+
+\section*{Question 9: First-Order Linear ODE with Integrating Factor}
+
+\textbf{Problem:} Evaluate the integrating factor, and use it to solve the differential equation:
+\[
+xy' - y = 2x\ln(x), \quad y(1) = 2
+\]
+
+\subsection*{Solution}
+
+\textbf{Step 1: Rewrite in standard form.}
+
+First, we divide through by $x$ (assuming $x \neq 0$) to put the equation in standard linear form $y' + P(x)y = Q(x)$:
+\[
+y' - \frac{1}{x}y = 2\ln(x)
+\]
+
+Here, $P(x) = -\frac{1}{x}$ and $Q(x) = 2\ln(x)$.
+
+\textbf{Step 2: Find the integrating factor.}
+
+The integrating factor is given by:
+\[
+\mu(x) = e^{\int P(x)\,dx} = e^{\int -\frac{1}{x}\,dx} = e^{-\ln|x|}
+\]
+
+For $x > 0$ (which is required since we have $\ln(x)$ in the original equation):
+\[
+\mu(x) = e^{-\ln x} = \frac{1}{x}
+\]
+
+\textbf{Step 3: Multiply through by the integrating factor.}
+
+Multiplying the standard form equation by $\mu(x) = \frac{1}{x}$:
+\[
+\frac{1}{x}y' - \frac{1}{x^2}y = \frac{2\ln(x)}{x}
+\]
+
+The left side is the derivative of $\frac{y}{x}$ (we can verify: $\frac{d}{dx}\left(\frac{y}{x}\right) = \frac{y'}{x} - \frac{y}{x^2}$):
+\[
+\frac{d}{dx}\left(\frac{y}{x}\right) = \frac{2\ln(x)}{x}
+\]
+
+\textbf{Step 4: Integrate both sides.}
+
+\[
+\frac{y}{x} = \int \frac{2\ln(x)}{x}\,dx
+\]
+
+For the right side, use substitution $u = \ln(x)$, so $du = \frac{1}{x}dx$:
+\[
+\int \frac{2\ln(x)}{x}\,dx = 2\int u\,du = 2 \cdot \frac{u^2}{2} + C = u^2 + C = (\ln x)^2 + C
+\]
+
+Therefore:
+\[
+\frac{y}{x} = (\ln x)^2 + C
+\]
+
+\textbf{Step 5: Solve for $y$.}
+
+\[
+y = x(\ln x)^2 + Cx
+\]
+
+\textbf{Step 6: Apply the initial condition.}
+
+Using $y(1) = 2$:
+\[
+2 = 1 \cdot (\ln 1)^2 + C \cdot 1 = 1 \cdot 0 + C = C
+\]
+
+Thus $C = 2$.
+
+\textbf{Step 7: Write the final solution.}
+
+\[
+\boxed{y = x(\ln x)^2 + 2x}
+\]
+
+\textbf{Verification:} We can verify by substituting back into the original equation:
+\begin{itemize}
+    \item $y = x(\ln x)^2 + 2x$
+    \item $y' = (\ln x)^2 + x \cdot 2\ln x \cdot \frac{1}{x} + 2 = (\ln x)^2 + 2\ln x + 2$
+    \item $xy' - y = x[(\ln x)^2 + 2\ln x + 2] - [x(\ln x)^2 + 2x]$
+    \item $= x(\ln x)^2 + 2x\ln x + 2x - x(\ln x)^2 - 2x = 2x\ln x$ \checkmark
+\end{itemize}
+
+\newpage
+
+\section*{Question 10}
+
+\section*{Question 10: Second-Order Linear ODE}
+
+Find the general solution of the differential equation:
+\[
+y'' - 2y' + y = e^{2x}
+\]
+
+\subsection*{Solution}
+
+This is a second-order linear ODE with constant coefficients. We solve it by finding the homogeneous solution $y_h$ and a particular solution $y_p$.
+
+\subsubsection*{Step 1: Solve the Homogeneous Equation}
+
+Consider the homogeneous equation:
+\[
+y'' - 2y' + y = 0
+\]
+
+The characteristic equation is:
+\[
+r^2 - 2r + 1 = 0
+\]
+
+Factoring:
+\[
+(r - 1)^2 = 0
+\]
+
+This gives a repeated root $r = 1$ with multiplicity 2.
+
+For a repeated root, the homogeneous solution is:
+\[
+y_h = C_1 e^x + C_2 x e^x
+\]
+
+\subsubsection*{Step 2: Find a Particular Solution}
+
+Since the right-hand side is $e^{2x}$ and $r = 2$ is \textit{not} a root of the characteristic equation, we try a particular solution of the form:
+\[
+y_p = A e^{2x}
+\]
+
+Compute the derivatives:
+\[
+y_p' = 2A e^{2x}
+\]
+\[
+y_p'' = 4A e^{2x}
+\]
+
+Substitute into the differential equation:
+\[
+y_p'' - 2y_p' + y_p = 4A e^{2x} - 2(2A e^{2x}) + A e^{2x}
+\]
+\[
+= 4A e^{2x} - 4A e^{2x} + A e^{2x}
+\]
+\[
+= A e^{2x}
+\]
+
+Setting this equal to $e^{2x}$:
+\[
+A e^{2x} = e^{2x}
+\]
+
+Therefore:
+\[
+A = 1
+\]
+
+The particular solution is:
+\[
+y_p = e^{2x}
+\]
+
+\subsubsection*{Step 3: Write the General Solution}
+
+The general solution is:
+\[
+y = y_h + y_p
+\]
+
+\[
+\boxed{y = C_1 e^x + C_2 x e^x + e^{2x}}
+\]
+
+where $C_1$ and $C_2$ are arbitrary constants.
+
+\newpage
+
+\section*{Question 11}
+
+\section*{Question 11: Optimization}
+
+\textbf{Problem:} Find the shortest distance from a given point $(0, b)$ on the $y$-axis to the parabola $x^2 = 4y$. (The number $b$ may have any real value.)
+
+\subsection*{Solution}
+
+\textbf{Setup:} A point on the parabola $x^2 = 4y$ can be written as $(x, \frac{x^2}{4})$. We want to minimize the distance from $(0, b)$ to this point.
+
+The distance squared is:
+\[
+D(x) = (x - 0)^2 + \left(\frac{x^2}{4} - b\right)^2 = x^2 + \left(\frac{x^2}{4} - b\right)^2
+\]
+
+\textbf{Note:} Minimizing $D(x)$ is equivalent to minimizing the distance (since $\sqrt{x}$ is monotonically increasing).
+
+\subsection*{Finding Critical Points}
+
+Taking the derivative:
+\[
+D'(x) = 2x + 2\left(\frac{x^2}{4} - b\right) \cdot \frac{2x}{4} = 2x + 2\left(\frac{x^2}{4} - b\right) \cdot \frac{x}{2}
+\]
+\[
+D'(x) = 2x + x\left(\frac{x^2}{4} - b\right) = 2x + \frac{x^3}{4} - bx
+\]
+\[
+D'(x) = x\left(2 + \frac{x^2}{4} - b\right) = x\left(\frac{x^2}{4} + 2 - b\right)
+\]
+
+Setting $D'(x) = 0$:
+\begin{enumerate}
+    \item $x = 0$, or
+    \item $\frac{x^2}{4} + 2 - b = 0 \implies x^2 = 4(b - 2)$
+\end{enumerate}
+
+The second equation has real solutions only when $b \geq 2$, giving $x = \pm 2\sqrt{b-2}$.
+
+\subsection*{Case 1: $b < 2$}
+
+The only critical point is $x = 0$. We verify this is a minimum:
+\[
+D''(x) = 2 + \frac{3x^2}{4} - b = 2 - b + \frac{3x^2}{4}
+\]
+At $x = 0$: $D''(0) = 2 - b > 0$ when $b < 2$. \checkmark
+
+The minimum distance squared is:
+\[
+D(0) = 0 + \left(0 - b\right)^2 = b^2
+\]
+\[
+\text{Minimum distance} = |b|
+\]
+
+\subsection*{Case 2: $b = 2$}
+
+At $b = 2$, we have $x = 0$ as a triple root (the two solutions coalesce).
+\[
+D(0) = 0 + (0 - 2)^2 = 4
+\]
+\[
+\text{Minimum distance} = 2
+\]
+
+\subsection*{Case 3: $b > 2$}
+
+We have three critical points: $x = 0$ and $x = \pm 2\sqrt{b-2}$.
+
+At $x = 0$: $D''(0) = 2 - b < 0$, so this is a local maximum.
+
+At $x = \pm 2\sqrt{b-2}$: By symmetry, both give the same distance. Let $x^2 = 4(b-2)$.
+\[
+D = x^2 + \left(\frac{x^2}{4} - b\right)^2 = 4(b-2) + \left(b - 2 - b\right)^2 = 4(b-2) + 4
+\]
+\[
+D = 4b - 8 + 4 = 4b - 4 = 4(b-1)
+\]
+\[
+\text{Minimum distance} = 2\sqrt{b-1}
+\]
+
+\subsection*{Final Answer}
+
+\[
+\boxed{\text{Shortest distance} = \begin{cases} |b| & \text{if } b \leq 2 \\ 2\sqrt{b-1} & \text{if } b > 2 \end{cases}}
+\]
+
+\textbf{Note:} When $b = 2$, both formulas give $2$, confirming continuity of our answer.
+
+\newpage
+
+\section*{Question 12}
+
+\section*{Question 12: Trigonometric Sums and Riemann Sums}
+
+\subsection*{Part (a): Trigonometric Identity and Sum Formula}
+
+\textbf{Step 1: Derive the product-to-sum identity.}
+
+Starting with the addition formulas:
+\begin{align}
+\cos(a + b) &= \cos a \cos b - \sin a \sin b \\
+\cos(a - b) &= \cos a \cos b + \sin a \sin b
+\end{align}
+
+Subtracting equation (1) from equation (2):
+\begin{align}
+\cos(a - b) - \cos(a + b) &= 2\sin a \sin b
+\end{align}
+
+Therefore:
+\begin{equation}
+\cos(a + b) - \cos(a - b) = -2\sin a \sin b
+\end{equation}
+
+\textbf{Step 2: Apply to the specific case.}
+
+Let $a = jt$ and $b = \frac{t}{2}$. Then:
+\begin{align}
+a + b &= jt + \frac{t}{2} = \left(j + \frac{1}{2}\right)t \\
+a - b &= jt - \frac{t}{2} = \left(j - \frac{1}{2}\right)t
+\end{align}
+
+Substituting into equation (4):
+\[
+\boxed{\cos\left(\left(j + \frac{1}{2}\right)t\right) - \cos\left(\left(j - \frac{1}{2}\right)t\right) = -2\sin\left(\frac{t}{2}\right)\sin(jt)}
+\]
+
+\textbf{Step 3: Derive the sum formula using telescoping.}
+
+Rearranging the identity:
+\[
+\sin(jt) = \frac{\cos\left(\left(j - \frac{1}{2}\right)t\right) - \cos\left(\left(j + \frac{1}{2}\right)t\right)}{2\sin\left(\frac{t}{2}\right)}
+\]
+
+This is valid when $\sin\left(\frac{t}{2}\right) \neq 0$, i.e., when $\frac{t}{2\pi}$ is not an integer.
+
+Summing from $j = 1$ to $n$:
+\[
+\sum_{j=1}^{n} \sin(jt) = \frac{1}{2\sin\left(\frac{t}{2}\right)} \sum_{j=1}^{n} \left[\cos\left(\left(j - \frac{1}{2}\right)t\right) - \cos\left(\left(j + \frac{1}{2}\right)t\right)\right]
+\]
+
+The sum telescopes:
+\begin{align*}
+&\sum_{j=1}^{n} \left[\cos\left(\left(j - \frac{1}{2}\right)t\right) - \cos\left(\left(j + \frac{1}{2}\right)t\right)\right] \\
+&= \left[\cos\left(\frac{t}{2}\right) - \cos\left(\frac{3t}{2}\right)\right] + \left[\cos\left(\frac{3t}{2}\right) - \cos\left(\frac{5t}{2}\right)\right] + \cdots + \left[\cos\left(\left(n - \frac{1}{2}\right)t\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)\right] \\
+&= \cos\left(\frac{t}{2}\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)
+\end{align*}
+
+Therefore:
+\[
+\boxed{\sum_{j=1}^{n} \sin(jt) = \frac{\cos\left(\frac{t}{2}\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)}{2\sin\left(\frac{t}{2}\right)}}
+\]
+
+\subsection*{Part (b): Evaluating the Integral via Riemann Sum}
+
+\textbf{Step 1: Set up the Riemann sum.}
+
+To evaluate $\displaystyle\int_0^b \sin x \, dx$ where $0 < b < \frac{\pi}{2}$, partition $[0, b]$ into $n$ equal subintervals.
+
+Let $\Delta x = \frac{b}{n}$ and use right endpoints $x_j = j \cdot \frac{b}{n}$ for $j = 1, 2, \ldots, n$.
+
+The Riemann sum is:
+\[
+R_n = \sum_{j=1}^{n} \sin(x_j) \cdot \Delta x = \sum_{j=1}^{n} \sin\left(\frac{jb}{n}\right) \cdot \frac{b}{n} = \frac{b}{n} \sum_{j=1}^{n} \sin\left(\frac{jb}{n}\right)
+\]
+
+\textbf{Step 2: Apply the sum formula from part (a).}
+
+Let $t = \frac{b}{n}$. Since $0 < b < \frac{\pi}{2}$ and $n \geq 1$, we have $0 < t < \frac{\pi}{2}$, so $\frac{t}{2\pi}$ is not an integer.
+
+By part (a):
+\[
+\sum_{j=1}^{n} \sin(jt) = \frac{\cos\left(\frac{t}{2}\right) - \cos\left(\left(n + \frac{1}{2}\right)t\right)}{2\sin\left(\frac{t}{2}\right)}
+\]
+
+With $t = \frac{b}{n}$:
+\[
+\sum_{j=1}^{n} \sin\left(\frac{jb}{n}\right) = \frac{\cos\left(\frac{b}{2n}\right) - \cos\left(\frac{(2n+1)b}{2n}\right)}{2\sin\left(\frac{b}{2n}\right)}
+\]
+
+Therefore:
+\[
+R_n = \frac{b}{n} \cdot \frac{\cos\left(\frac{b}{2n}\right) - \cos\left(b + \frac{b}{2n}\right)}{2\sin\left(\frac{b}{2n}\right)}
+\]
+
+\textbf{Step 3: Evaluate the limit as $n \to \infty$.}
+
+Rewrite as:
+\[
+R_n = \frac{b}{2n\sin\left(\frac{b}{2n}\right)} \cdot \left[\cos\left(\frac{b}{2n}\right) - \cos\left(b + \frac{b}{2n}\right)\right]
+\]
+
+Let $u = \frac{b}{2n}$, so as $n \to \infty$, $u \to 0^+$.
+
+\textbf{First factor:} Using $\lim_{u \to 0} \frac{\sin u}{u} = 1$:
+\[
+\lim_{n \to \infty} \frac{b}{2n\sin\left(\frac{b}{2n}\right)} = \lim_{u \to 0^+} \frac{u}{\sin u} = 1
+\]
+
+\textbf{Second factor:} As $n \to \infty$:
+\[
+\lim_{n \to \infty} \left[\cos\left(\frac{b}{2n}\right) - \cos\left(b + \frac{b}{2n}\right)\right] = \cos(0) - \cos(b) = 1 - \cos b
+\]
+
+\textbf{Step 4: Combine the limits.}
+
+\[
+\int_0^b \sin x \, dx = \lim_{n \to \infty} R_n = 1 \cdot (1 - \cos b) = 1 - \cos b
+\]
+
+\textbf{Verification:} By the Fundamental Theorem of Calculus:
+\[
+\int_0^b \sin x \, dx = [-\cos x]_0^b = -\cos b - (-\cos 0) = 1 - \cos b \quad \checkmark
+\]
+
+\[
+\boxed{\int_0^b \sin x \, dx = 1 - \cos b}
+\]
+
+\newpage
+\end{document}

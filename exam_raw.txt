@@ -1,0 +1,256 @@
+University of Toronto
+Faculty of Applied Science and Engineering
+ESC194F Calculus I
+Final Exam
+December 2024
+No calculators or aids
+There are 12 questions, each question is worth 10 marks
+Examiners: P.C. Stangeby and J.W. Davis
+
+Page 1 of 13
+
+1)
+
+Determine whether the following statements are true or false.
+(Marks will not be deducted for incorrect answers)
+
+Hint: some of the following are more challenging, some less so. Do the easier parts first and come back
+to the question later if necessary.
+
+If 𝑓𝑓 is an even function, then 𝑓𝑓′ is an even function.
+If 𝑓𝑓(𝑥𝑥) > 1 for all 𝑥𝑥 and lim 𝑓𝑓(𝑥𝑥) exists, then lim 𝑓𝑓(𝑥𝑥) > 1.
+𝑥𝑥→0
+
+16 𝑑𝑑𝑑𝑑
+
+∫2
+
+𝑥𝑥
+
+lim �
+
+𝑥𝑥→0
+
+= 3 ln 2
+
+2𝑥𝑥
+
+𝑥𝑥→4 𝑥𝑥−4
+
+8
+
+2𝑥𝑥
+
+8
+
+− 𝑥𝑥−4� = lim �𝑥𝑥−4� − lim �𝑥𝑥−4�
+𝑥𝑥→4
+
+𝑥𝑥−4
+
+If 𝑓𝑓′(𝑟𝑟) exists, then lim 𝑓𝑓(𝑥𝑥) = 𝑓𝑓(𝑟𝑟).
+𝑥𝑥→𝑟𝑟
+
+If 𝑓𝑓 is continuous at 𝑎𝑎, so is |𝑓𝑓|.
+There exists a function 𝑓𝑓 such that 𝑓𝑓(𝑥𝑥) > 0, 𝑓𝑓′(𝑥𝑥) < 0, and 𝑓𝑓′′(𝑥𝑥) > 0 for all x.
+5
+
+5
+
+∫−5(𝑎𝑎𝑥𝑥2 + 𝑏𝑏𝑏𝑏 + 𝑐𝑐) 𝑑𝑑𝑑𝑑 = 2 ∫0 (𝑎𝑎𝑥𝑥2 + 𝑐𝑐)𝑑𝑑𝑑𝑑
+All continuous functions have antiderivatives.
+
+If the line 𝑥𝑥 = 1 is a vertical asymptote of 𝑦𝑦 = 𝑓𝑓(𝑥𝑥), then 𝑓𝑓 is not defined at 𝑥𝑥 = 1.
+
+Page 2 of 13
+
+2)
+
+Give the derivatives and anti-derivatives of:
+𝑐𝑐 2𝑥𝑥 ,
+
+where 𝑐𝑐 > 0 is a constant.
+
+𝑥𝑥 2𝑐𝑐 ,
+
+sin(𝑐𝑐𝑐𝑐) ,
+
+𝑥𝑥 ln(𝑐𝑐𝑥𝑥 2 ),
+
+𝑒𝑒 𝑐𝑐𝑐𝑐
+
+Hint: you may find it useful to prove, then use, the fact that an antiderivative of ln 𝑥𝑥 is 𝑥𝑥 ln 𝑥𝑥 − 𝑥𝑥.
+
+Page 3 of 13
+
+3) Find the value of each of the following, if it exists. If you believe it doesn’t exist, give your reasons.
+a)
+
+3
+𝑥𝑥→2 𝑥𝑥 − 2
+lim+
+
+|𝑥𝑥|
+𝑥𝑥→0 𝑥𝑥
+
+b) lim
+
+c)
+
+𝑑𝑑 𝑓𝑓(𝑥𝑥)
+�
+�
+given that 𝑓𝑓(4) = 16 and 𝑓𝑓 ′ (4) = 2
+𝑑𝑑𝑑𝑑 √𝑥𝑥 𝑥𝑥=4
+
+𝑑𝑑𝑑𝑑
+𝑒𝑒 4𝑥𝑥 cos2 𝑥𝑥
+d) � �
+when 𝑦𝑦 =
+(2 + 𝑥𝑥)4
+𝑑𝑑𝑑𝑑 𝑥𝑥=0
+
+𝑑𝑑𝑑𝑑
+e) � �
+for 𝑥𝑥 = [𝑓𝑓(3𝑥𝑥 + 4𝑦𝑦)]2 and 𝑓𝑓 ′ (7) = 1/4
+𝑑𝑑𝑑𝑑 𝑥𝑥=1,𝑦𝑦=1
+
+Page 4 of 13
+
+4)
+
+a) Provide a δ-ε proof that lim 𝑥𝑥 2 = 4.
+𝑥𝑥→−2
+
+1
+
+b) Provide a rigorous proof (i.e. similar to a δ-ε proof) that lim − 𝑥𝑥+1 = −∞.
+𝑥𝑥→−1
+
+Page 5 of 13
+
+5) For the function:
+
+1
+(𝑥𝑥 − 2)2
+i) Determine the domain of 𝑓𝑓, the 𝑥𝑥 and 𝑦𝑦 intercepts, and identify any symmetry.
+ii) Find the intervals in which f increases or decreases.
+iii) Find the extreme values.
+iv) Determine the concavity of the graph.
+v) Sketch the graph specifying the points of inflection, asymptotes and vertical tangents, if any.
+𝑓𝑓(𝑥𝑥) =
+
+1
+
+𝑥𝑥2
+
+−
+
+Page 6 of 13
+
+6) Consider the region defined by the curves 𝑦𝑦 = 𝑥𝑥 2 and 𝑦𝑦 = 2 − 𝑥𝑥2. Provide a sketch of the region
+and find (but do NOT solve) integrals representing the following:
+a) The volume of rotation about the x-axis using the washer method.
+b) The volume of rotation about the x-axis using the shell method.
+c) The volume of rotation about the line 𝑥𝑥 = 1 using the washer method.
+d) The volume of rotation about the line 𝑥𝑥 = 1 using the shell method.
+
+Page 7 of 13
+
+7)
+
+Use l’Hospital’s rule to evaluate the following limits:
+6𝑥𝑥 − 3𝑥𝑥
+𝑥𝑥 2 − ln(2/𝑥𝑥)
+𝑎𝑎) lim
+b) lim
+𝑥𝑥→0
+𝑥𝑥→∞ 3𝑥𝑥 2 + 2𝑥𝑥
+𝑥𝑥
+
+Page 8 of 13
+
+c) lim �𝑥𝑥 − �𝑥𝑥 2 − 3𝑥𝑥�
+𝑥𝑥→∞
+
+8) a) Given the functions: 𝑓𝑓(𝑥𝑥) = 𝑥𝑥 − 1 − ln 𝑥𝑥 and 𝑔𝑔(𝑥𝑥) = ln 𝑥𝑥 − 1 + 1/𝑥𝑥
+prove that the inequalities:
+1
+1 − < ln 𝑥𝑥 < 𝑥𝑥 − 1
+𝑥𝑥
+are valid for 𝑥𝑥 > 0, 𝑥𝑥 ≠ 1. What happens if 𝑥𝑥 = 1?
+Hint: Consider the signs of 𝑓𝑓′ and 𝑔𝑔′.
+b) Prove:
+ln(1 + 𝑥𝑥)
+lim
+=1
+𝑥𝑥→0
+𝑥𝑥
+two ways:
+(i) using the definition of the derivative of ln 𝑥𝑥
+(ii) using part (a)
+
+Page 9 of 13
+
+9)
+
+Evaluate the integrating factor, and use it to solve the differential equation:
+𝑥𝑥𝑦𝑦 ′ − 𝑦𝑦 = 2𝑥𝑥 ln 𝑥𝑥 ,
+𝑦𝑦(1) = 2.
+
+Page 10 of 13
+
+10) Find the general solution of the differential equation:
+𝑦𝑦 ′′ − 2𝑦𝑦 ′ + 𝑦𝑦 = 𝑒𝑒 2𝑥𝑥
+
+Page 11 of 13
+
+11)
+
+Find the shortest distance from a given point (0, 𝑏𝑏) on the 𝑦𝑦-axis to the parabola 𝑥𝑥 2 = 4𝑦𝑦. (The
+number 𝑏𝑏 may have any real value.)
+
+Page 12 of 13
+
+12) a) Use the addition formulas:
+
+cos(𝑎𝑎 + 𝑏𝑏) = (cos 𝑎𝑎 cos 𝑏𝑏 − sin 𝑎𝑎 sin 𝑏𝑏)
+cos(𝑎𝑎 − 𝑏𝑏) = (cos 𝑎𝑎 cos 𝑏𝑏 + sin 𝑎𝑎 sin 𝑏𝑏)
+
+1
+
+1
+
+1
+
+To show that: cos ��𝑗𝑗 + 2� 𝑡𝑡� − cos ��𝑗𝑗 − 2� 𝑡𝑡� = −2 sin �2 𝑡𝑡� sin(𝑗𝑗𝑗𝑗)
+𝑡𝑡
+
+And hence deduce that if 2𝜋𝜋 is not an integer, then:
+𝑛𝑛
+
+� sin(𝑗𝑗𝑗𝑗) =
+𝑗𝑗=1
+
+𝑏𝑏
+
+𝑡𝑡
+2
+
+1
+2
+
+cos( ) − cos ��𝑛𝑛 + � 𝑡𝑡�
+
+𝑡𝑡
+2
+
+2 sin � �
+
+𝜋𝜋
+
+b) Use the result in part (a) to evaluate ∫0 sin 𝑥𝑥 𝑑𝑑𝑑𝑑, 0 < 𝑏𝑏 < 2 , as the limit of a Riemann sum.
+
+Page 13 of 13
+
+
