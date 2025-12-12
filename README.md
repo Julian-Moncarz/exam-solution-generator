@@ -11,7 +11,7 @@ An automated pipeline that uses Claude Code headlessly to solve exam questions a
 
 ## Requirements
 
-- [Claude CLI](https://docs.anthropic.com/en/docs/claude-cli) (`claude` command)
+- [Claude Code]([https://docs.anthropic.com/en/docs/claude-cli](https://claude.com/product/claude-code)) (`claude` command)
 - LaTeX compiler (`tectonic` or `pdflatex`)
 - `pdftotext` (optional, for extracting questions from PDFs)
 
