@@ -1,6 +1,6 @@
 # Exam Solution Generator
 
-An automated pipeline that uses Claude AI to solve exam questions and generate step-by-step solution PDFs.
+An automated pipeline that uses Claude Code headlessly to solve exam questions and generate step-by-step solution PDFs.
 
 ## How It Works
 
